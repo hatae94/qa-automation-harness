@@ -143,6 +143,20 @@ def _build_slot_values(
         if phone_match:
             slots["phoneNumber"] = phone_match.group()
 
+    # visual-check: target_element from TC category
+    if strategy == "visual-check":
+        elem = tc.category.minor or tc.category.middle or "splash_screen"
+        slots["target_element"] = elem.replace(" ", "_").lower()
+
+    # profile-input: fill profile-specific slots
+    if strategy == "profile-input":
+        cat = f"{tc.category.middle} {tc.category.minor}".strip()
+        slots.setdefault("profile_field_selector", cat.replace(" ", "_").lower())
+        slots.setdefault("input_selector", f"#{cat.replace(' ', '-').lower()}-input")
+        slots.setdefault("input_value", "테스트")
+        slots.setdefault("next_button", "next-btn")
+        slots.setdefault("expected_result_element", "profile-complete")
+
     return slots
 
 

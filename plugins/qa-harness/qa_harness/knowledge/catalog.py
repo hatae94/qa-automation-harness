@@ -81,7 +81,18 @@ def load_catalog(screens_dir: str | Path, flow_graph_path: str | Path) -> Screen
                 # Selector index (M3 fix)
                 catalog.elements_by_selector[element.selector] = element
 
-    # -- flow graph --
+    # -- flow graph -- auto-discover if not at given path
+    if not flow_graph_path.is_file():
+        candidates = [
+            screens_dir / "flow-graph.json",
+            screens_dir.parent / "flow-graph.json",
+            screens_dir.parent / "flows" / "flow-graph.json",
+        ]
+        for candidate in candidates:
+            if candidate.is_file():
+                flow_graph_path = candidate
+                logger.info("Auto-discovered flow graph: %s", flow_graph_path)
+                break
     if not flow_graph_path.is_file():
         logger.warning("Flow graph not found: %s", flow_graph_path)
     else:
