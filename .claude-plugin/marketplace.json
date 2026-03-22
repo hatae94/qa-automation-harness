@@ -1,20 +1,14 @@
 {
   "name": "qa-automation-harness",
-  "displayName": "QA Automation Harness",
-  "description": "Harness engineering plugins for maestro-runner based QA automation",
   "owner": {
     "name": "hatae94",
-    "url": "https://github.com/hatae94"
+    "email": "gkxo5959@naver.com"
   },
   "plugins": [
     {
       "name": "qa-automation-harness",
-      "displayName": "QA Automation Harness",
       "description": "Skills for deterministic QA test generation and execution",
-      "source": {
-        "source": "local",
-        "path": "."
-      },
+      "source": ".",
       "version": "0.1.0"
     }
   ]
