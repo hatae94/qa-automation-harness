@@ -38,75 +38,40 @@ Deterministic test generation and execution framework for hybrid WebView mobile 
 
 ## Installation
 
-### Option 1: Claude Code Plugin (Recommended)
-
-Skills를 Claude Code 플러그인으로 설치하여 `/qa-automation-harness:qa-run` 등의 skill을 사용할 수 있습니다.
+### 다른 노트북에서 설치 (Clone + Plugin + Python)
 
 ```bash
-# 로컬 디렉토리에서 직접 로드 (개발용)
-claude --plugin-dir /path/to/qa-automation-harness
-
-# GitHub에서 설치 (다른 노트북에서 사용)
-# 1. marketplace에 등록된 경우:
-/plugin install qa-automation-harness
-
-# 2. GitHub 레포에서 직접 설치:
-#    settings.json에 아래 추가 후 Claude Code 재시작
-#    "plugins": [{ "source": "github", "repo": "hatae94/qa-automation-harness" }]
-```
-
-### Option 2: Python 패키지 설치
-
-```bash
-# GitHub에서 클론
-git clone git@github.com:hatae94/qa-automation-harness.git
-cd qa-automation-harness
-
-# Install in development mode
-pip install -e .
-
-# Install with dev dependencies (pytest, etc.)
-pip install -e ".[dev]"
-
-# Verify installation
-qa-harness --help
-```
-
-### Option 3: 다른 노트북에서 한번에 설치 (Plugin + Python)
-
-```bash
-# 1. 레포 클론
+# 1. 레포 클론 (SSH)
 git clone git@github.com:hatae94/qa-automation-harness.git
 cd qa-automation-harness
 
 # 2. Python 패키지 설치
 pip install -e ".[dev]"
 
-# 3. Claude Code에 플러그인 등록 (프로젝트 단위)
-#    프로젝트 루트에서:
+# 3. Claude Code 플러그인으로 사용
+claude --plugin-dir ./qa-automation-harness
+# → /qa-automation-harness:qa-run 등 skill 사용 가능
+
+# 4. 설치 확인
+qa-harness --help
+```
+
+> **참고:** Claude Code 플러그인은 로컬 디렉토리 기반으로 동작하므로, clone이 필수입니다.
+> `--plugin-dir`로 세션 단위 로드하거나, 아래처럼 프로젝트 설정에 영구 등록할 수 있습니다.
+
+#### 프로젝트에 영구 등록 (선택)
+
+```bash
+# 프로젝트의 .claude/settings.local.json에 추가 (git에 포함되지 않음)
 mkdir -p .claude
 cat > .claude/settings.local.json << 'EOF'
 {
-  "plugins": [
-    {
-      "source": "local",
-      "path": "./qa-automation-harness"
-    }
-  ]
+  "enabledPlugins": ["/absolute/path/to/qa-automation-harness"]
 }
 EOF
-
-# 4. 또는 세션 단위로 로드
-claude --plugin-dir ./qa-automation-harness
-
-# 5. 설치 확인
-qa-harness --help          # Python CLI
-claude                      # /qa-automation-harness:qa-run 등 skill 사용 가능
 ```
 
-### SSH 설정 (개인 GitHub 계정)
-
-회사 노트북에서 개인 GitHub 계정을 사용하는 경우:
+### SSH 설정 (회사 노트북에서 개인 GitHub 사용)
 
 ```bash
 # ~/.ssh/config에 추가
