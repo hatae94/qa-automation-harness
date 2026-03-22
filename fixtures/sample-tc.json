@@ -1,0 +1,138 @@
+{
+  "summary": [
+    {
+      "platform": "Android",
+      "total_tc": 606,
+      "coverage": "100.00%",
+      "pass_rate": "93%",
+      "pass": 466,
+      "fail": 33,
+      "block": 4,
+      "na": 67,
+      "nt": 36,
+      "note": ""
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "LoginPage_1",
+      "priority": 1,
+      "category": {
+        "major": "스플래시",
+        "middle": "스플래시화면",
+        "minor": "스플래시 이미지"
+      },
+      "function_type": "UI",
+      "pre_condition": "",
+      "steps": [
+        { "number": 1, "description": "알파 앱 실행" }
+      ],
+      "raw_step_text": "1. 알파 앱 실행",
+      "expected_result": "스플래시 이미지 노출\n - 이미지 Figma 참고",
+      "result_android": "Pass",
+      "result_ios": "Pass",
+      "issue_id": "",
+      "defect_severity": "",
+      "defect_type": "",
+      "change_note": "",
+      "remark": ""
+    },
+    {
+      "id": "LoginPage_2",
+      "priority": 1,
+      "category": {
+        "major": "인트로",
+        "middle": "인트로화면",
+        "minor": "인트로 이미지"
+      },
+      "function_type": "UI",
+      "pre_condition": "",
+      "steps": [
+        { "number": 1, "description": "알파 앱 실행" }
+      ],
+      "raw_step_text": "1. 알파 앱 실행",
+      "expected_result": "스플래시 이후 인트로 이미지 노출\n - 이미지 Figma 참고",
+      "result_android": "Pass",
+      "result_ios": "Pass",
+      "issue_id": "",
+      "defect_severity": "",
+      "defect_type": "",
+      "change_note": "",
+      "remark": ""
+    },
+    {
+      "id": "LoginPage_3",
+      "priority": 1,
+      "category": {
+        "major": "인트로",
+        "middle": "권한",
+        "minor": "IDFA 권한"
+      },
+      "function_type": "UI",
+      "pre_condition": "",
+      "steps": [
+        { "number": 1, "description": "알파 앱 실행" },
+        { "number": 2, "description": "인트로 > 앱 추적 권한 팝업" }
+      ],
+      "raw_step_text": "1. 알파 앱 실행 \n2. 인트로 > 앱 추적 권한 팝업",
+      "expected_result": "앱 추적 권한 팝업 노출",
+      "result_android": "N/T",
+      "result_ios": "Pass",
+      "issue_id": "",
+      "defect_severity": "",
+      "defect_type": "",
+      "change_note": "",
+      "remark": ""
+    },
+    {
+      "id": "LoginPage_4",
+      "priority": 1,
+      "category": {
+        "major": "인트로",
+        "middle": "권한",
+        "minor": "알림 권한\n팝업"
+      },
+      "function_type": "UI",
+      "pre_condition": "AOS 13 이상 버전",
+      "steps": [
+        { "number": 1, "description": "알파 앱 실행" },
+        { "number": 2, "description": "인트로 > 앱 추적 권한 팝업" }
+      ],
+      "raw_step_text": "1. 알파 앱 실행 \n2. 인트로 > 앱 추적 권한 팝업",
+      "expected_result": "알림 권한 팝업 노출\n - iOS / AOS 노출 팝업 이미지 다름",
+      "result_android": "Pass",
+      "result_ios": "Pass",
+      "issue_id": "",
+      "defect_severity": "",
+      "defect_type": "",
+      "change_note": "",
+      "remark": ""
+    },
+    {
+      "id": "LoginPage_5",
+      "priority": 2,
+      "category": {
+        "major": "인트로",
+        "middle": "권한",
+        "minor": "알림 권한\n허용"
+      },
+      "function_type": "기능",
+      "pre_condition": "",
+      "steps": [
+        { "number": 1, "description": "알파 앱 실행" },
+        { "number": 2, "description": "인트로 > 앱 추적 권한 팝업 > 알림 받기(허용)" },
+        { "number": 3, "description": "앱 종료 후 임의 알림 전송" }
+      ],
+      "raw_step_text": "1. 알파 앱 실행 \n2. 인트로 > 앱 추적 권한 팝업 > 알림 받기(허용)\n3. 앱 종료 후 임의 알림 전송",
+      "expected_result": "알림 허용되어 팝업 미노출",
+      "result_android": "Pass",
+      "result_ios": "Pass",
+      "issue_id": "",
+      "defect_severity": "",
+      "defect_type": "",
+      "change_note": "",
+      "remark": ""
+    }
+  ],
+  "errors": []
+}

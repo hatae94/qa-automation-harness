@@ -1,0 +1,29 @@
+# Visual Check Template (M1 fix)
+# Covers: UI-only assertion TCs that only verify visual elements are displayed.
+# These TCs do not exercise functional flows -- they simply launch and assert.
+#
+# Slots:
+#   {{ deviceId }} - source: computed - Target device identifier
+#   {{ cdpPort }}  - source: computed - CDP bridge port (default: 5100)
+
+appId: com.cupist.alphaz
+tags:
+  - visual-check
+  - ui-only
+  - assertion
+
+---
+# Step 1: Launch app
+- launchApp:
+    appId: com.cupist.alphaz
+    clearState: true
+
+# Step 2: Wait for intro screen to render
+- extendedWaitUntil:
+    visible:
+      id: "intro-v2.splash-image"
+    timeout: 15000
+
+# Step 3: Take screenshot for visual verification
+- takeScreenshot:
+    path: "screenshots/visual-check"

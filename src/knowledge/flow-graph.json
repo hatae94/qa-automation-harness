@@ -1,0 +1,115 @@
+{
+  "screens": [
+    "intro",
+    "permission-dialog",
+    "onboarding",
+    "phone-input",
+    "otp-verify",
+    "already-registered",
+    "login",
+    "terms-agreement"
+  ],
+  "entryScreen": "intro",
+  "terminalScreens": ["terms-agreement", "login", "already-registered"],
+  "transitions": [
+    {
+      "from": "intro",
+      "to": "permission-dialog",
+      "action": "App launch triggers IDFA/notification permission dialogs",
+      "elementId": null,
+      "preconditions": ["First launch or permissions not yet granted"],
+      "isOptional": true
+    },
+    {
+      "from": "permission-dialog",
+      "to": "intro",
+      "action": "Dismiss permission dialog (allow or deny)",
+      "elementId": "tracking-allow-btn",
+      "preconditions": []
+    },
+    {
+      "from": "intro",
+      "to": "onboarding",
+      "action": "Tap signup (멤버십 신청) button",
+      "elementId": "signup-btn",
+      "preconditions": []
+    },
+    {
+      "from": "intro",
+      "to": "login",
+      "action": "Tap login (로그인) button",
+      "elementId": "login-btn",
+      "preconditions": []
+    },
+    {
+      "from": "onboarding",
+      "to": "intro",
+      "action": "Tap close (X) button on onboarding",
+      "elementId": "close-btn",
+      "preconditions": []
+    },
+    {
+      "from": "onboarding",
+      "to": "phone-input",
+      "action": "Tap confirm (확인) button on onboarding",
+      "elementId": "confirm-btn",
+      "preconditions": []
+    },
+    {
+      "from": "phone-input",
+      "to": "intro",
+      "action": "Tap back arrow on phone input page",
+      "elementId": "back-btn",
+      "preconditions": []
+    },
+    {
+      "from": "phone-input",
+      "to": "otp-verify",
+      "action": "Enter phone number and tap 인증번호 받기",
+      "elementId": "submit-btn",
+      "preconditions": ["Valid phone number entered (10-11 digits)"]
+    },
+    {
+      "from": "otp-verify",
+      "to": "phone-input",
+      "action": "Tap back arrow on OTP page",
+      "elementId": "back-btn",
+      "preconditions": []
+    },
+    {
+      "from": "otp-verify",
+      "to": "already-registered",
+      "action": "Enter correct OTP for already-registered phone",
+      "elementId": "otp-field",
+      "preconditions": ["Phone number is already registered"]
+    },
+    {
+      "from": "otp-verify",
+      "to": "terms-agreement",
+      "action": "Enter correct OTP for new phone number",
+      "elementId": "otp-field",
+      "preconditions": ["Phone number is not registered"]
+    },
+    {
+      "from": "already-registered",
+      "to": "login",
+      "action": "Tap login button on already-registered popup",
+      "elementId": "login-btn",
+      "preconditions": []
+    },
+    {
+      "from": "already-registered",
+      "to": "intro",
+      "action": "Tap back button on already-registered popup",
+      "elementId": "back-btn",
+      "preconditions": []
+    },
+    {
+      "from": "login",
+      "to": "intro",
+      "action": "Tap back arrow on login page",
+      "elementId": "back-btn",
+      "preconditions": []
+    }
+  ]
+}

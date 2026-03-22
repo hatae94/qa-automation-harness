@@ -1,0 +1,43 @@
+{
+  "id": "onboarding",
+  "name": "온보딩 (프라이버시 안내)",
+  "description": "Privacy onboarding screen shown after tapping signup. Contains privacy notice title, subtitle, close button and confirm button.",
+  "rendererType": "webview",
+  "elements": [
+    {
+      "id": "privacy-title",
+      "screen": "onboarding",
+      "selector": "onboarding.privacy-title",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "프라이버시, 최우선.",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='onboarding.privacy-title']",
+      "enabled": true
+    },
+    {
+      "id": "close-btn",
+      "screen": "onboarding",
+      "selector": "onboarding.close-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "X 닫기 버튼",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='onboarding.close-btn']",
+      "enabled": true
+    },
+    {
+      "id": "confirm-btn",
+      "screen": "onboarding",
+      "selector": "onboarding.confirm-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "확인 버튼",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='onboarding.confirm-btn']",
+      "enabled": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_11", "LoginPage_12", "LoginPage_13", "LoginPage_14"],
+  "preconditions": ["Tapped signup button on intro screen"]
+}

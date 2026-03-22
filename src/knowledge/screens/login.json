@@ -1,0 +1,54 @@
+{
+  "id": "login",
+  "name": "로그인 페이지",
+  "description": "Login screen for existing users. Reached from intro login button or from already-registered redirect.",
+  "rendererType": "webview",
+  "elements": [
+    {
+      "id": "title",
+      "screen": "login",
+      "selector": "login.title",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "로그인",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='login.title']",
+      "enabled": true
+    },
+    {
+      "id": "phone-field",
+      "screen": "login",
+      "selector": "login.phone-field",
+      "selectorType": "testID",
+      "type": "input",
+      "label": "전화번호 입력 필드",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='login.phone-field'] input",
+      "enabled": true
+    },
+    {
+      "id": "submit-btn",
+      "screen": "login",
+      "selector": "login.submit-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "로그인 버튼",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='login.submit-btn']",
+      "enabled": true
+    },
+    {
+      "id": "back-btn",
+      "screen": "login",
+      "selector": "login.back-btn",
+      "selectorType": "testID",
+      "type": "icon",
+      "label": "< 뒤로가기",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='login.back-btn']",
+      "enabled": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_31", "LoginPage_32", "LoginPage_33", "LoginPage_34", "LoginPage_35"],
+  "preconditions": ["Navigated from intro login button or already-registered redirect"]
+}

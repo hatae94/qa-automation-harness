@@ -1,0 +1,99 @@
+{
+  "id": "otp-verify",
+  "name": "인증번호 입력 페이지",
+  "description": "OTP verification screen. User enters the verification code sent to their phone number. Includes auto-fill from SMS, manual input, timer, and resend functionality.",
+  "rendererType": "webview",
+  "elements": [
+    {
+      "id": "title",
+      "screen": "otp-verify",
+      "selector": "otp-verify.title",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "전송된 인증번호를 입력해주세요",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='otp-verify.title']",
+      "enabled": true
+    },
+    {
+      "id": "phone-display",
+      "screen": "otp-verify",
+      "selector": "otp-verify.phone-display",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "전화번호 표시 (010-XXXX-XXXX)",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='otp-verify.phone-display']",
+      "enabled": true
+    },
+    {
+      "id": "otp-field",
+      "screen": "otp-verify",
+      "selector": "otp-verify.otp-field",
+      "selectorType": "testID",
+      "type": "input",
+      "label": "인증번호 입력 필드",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='otp-verify.otp-field'] input",
+      "enabled": true
+    },
+    {
+      "id": "timer",
+      "screen": "otp-verify",
+      "selector": "otp-verify.timer",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "인증 타이머",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='otp-verify.timer']",
+      "enabled": true
+    },
+    {
+      "id": "resend-btn",
+      "screen": "otp-verify",
+      "selector": "otp-verify.resend-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "인증번호 재전송",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='otp-verify.resend-btn']",
+      "enabled": true
+    },
+    {
+      "id": "auto-fill-otp",
+      "screen": "otp-verify",
+      "selector": "otp-verify.auto-fill",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "SMS 인증번호 자동입력",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='otp-verify.auto-fill']",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "back-btn",
+      "screen": "otp-verify",
+      "selector": "otp-verify.back-btn",
+      "selectorType": "testID",
+      "type": "icon",
+      "label": "< 뒤로가기",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='otp-verify.back-btn']",
+      "enabled": true
+    },
+    {
+      "id": "sent-toast",
+      "screen": "otp-verify",
+      "selector": "인증번호를 전송했습니다",
+      "selectorType": "text",
+      "type": "toast",
+      "label": "인증번호 전송 토스트",
+      "rendererType": "webview",
+      "enabled": true,
+      "optional": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_23", "LoginPage_24", "LoginPage_25", "LoginPage_26", "LoginPage_27"],
+  "preconditions": ["Phone number submitted on phone-input screen"]
+}

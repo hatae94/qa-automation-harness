@@ -1,0 +1,77 @@
+{
+  "id": "terms-agreement",
+  "name": "이용약관 동의",
+  "description": "Terms and conditions agreement screen shown after OTP verification for new signups. Contains multiple checkboxes for different terms and a confirm button.",
+  "rendererType": "webview",
+  "elements": [
+    {
+      "id": "title",
+      "screen": "terms-agreement",
+      "selector": "terms.title",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "이용약관 동의",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='terms.title']",
+      "enabled": true
+    },
+    {
+      "id": "all-agree-checkbox",
+      "screen": "terms-agreement",
+      "selector": "terms.all-agree",
+      "selectorType": "testID",
+      "type": "toggle",
+      "label": "전체 동의",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='terms.all-agree']",
+      "enabled": true
+    },
+    {
+      "id": "service-terms",
+      "screen": "terms-agreement",
+      "selector": "terms.service",
+      "selectorType": "testID",
+      "type": "toggle",
+      "label": "서비스 이용약관 (필수)",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='terms.service']",
+      "enabled": true
+    },
+    {
+      "id": "privacy-terms",
+      "screen": "terms-agreement",
+      "selector": "terms.privacy",
+      "selectorType": "testID",
+      "type": "toggle",
+      "label": "개인정보 처리방침 (필수)",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='terms.privacy']",
+      "enabled": true
+    },
+    {
+      "id": "marketing-terms",
+      "screen": "terms-agreement",
+      "selector": "terms.marketing",
+      "selectorType": "testID",
+      "type": "toggle",
+      "label": "마케팅 수신 동의 (선택)",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='terms.marketing']",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "confirm-btn",
+      "screen": "terms-agreement",
+      "selector": "terms.confirm-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "동의하고 계속하기",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='terms.confirm-btn']",
+      "enabled": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_36", "LoginPage_37", "LoginPage_38", "LoginPage_39", "LoginPage_40"],
+  "preconditions": ["OTP verified successfully for new user"]
+}

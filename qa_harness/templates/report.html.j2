@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Automation Report - {{ report.generated_at }}</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;padding:2rem}
+    h1{font-size:1.5rem;margin-bottom:1rem;color:#f8fafc}
+    h2{font-size:1.2rem;margin:1.5rem 0 .5rem;color:#94a3b8}
+    .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:1rem 0}
+    .card{background:#1e293b;border-radius:8px;padding:1rem;text-align:center}
+    .card .value{font-size:2rem;font-weight:bold}
+    .card .label{font-size:.85rem;color:#94a3b8;margin-top:.25rem}
+    .pass{color:#22c55e} .fail{color:#ef4444} .skip{color:#eab308} .error{color:#f97316}
+    table{width:100%;border-collapse:collapse;margin:.5rem 0}
+    th,td{padding:.5rem .75rem;text-align:left;border-bottom:1px solid #334155}
+    th{background:#1e293b;color:#94a3b8;font-size:.85rem;text-transform:uppercase}
+    tr:hover{background:#1e293b}
+    .timestamp{color:#64748b;font-size:.85rem;margin-bottom:1rem}
+  </style>
+</head>
+<body>
+  <h1>QA Automation Report</h1>
+  <div class="timestamp">Generated: {{ report.generated_at }}</div>
+  <div class="summary">
+    <div class="card"><div class="value">{{ report.summary.total_tcs }}</div><div class="label">Total TCs</div></div>
+    <div class="card"><div class="value pass">{{ report.summary.passed }}</div><div class="label">Passed</div></div>
+    <div class="card"><div class="value fail">{{ report.summary.failed }}</div><div class="label">Failed</div></div>
+    <div class="card"><div class="value skip">{{ report.summary.skipped }}</div><div class="label">Skipped</div></div>
+    <div class="card"><div class="value error">{{ report.summary.errors }}</div><div class="label">Errors</div></div>
+    <div class="card"><div class="value">{{ report.summary.pass_rate }}</div><div class="label">Pass Rate</div></div>
+    <div class="card"><div class="value">{{ "%.1f" | format(report.summary.total_duration_ms / 1000) }}s</div><div class="label">Duration</div></div>
+  </div>
+  <h2>Test Case Results</h2>
+  <table>
+    <thead><tr><th>TC ID</th><th>Status</th></tr></thead>
+    <tbody>
+    {% for tc_id, status in report.tc_results.items() %}
+      <tr><td>{{ tc_id | e }}</td><td class="{{ status }}">{{ status | upper }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% if report.failures %}
+  <h2>Failures</h2>
+  <table>
+    <thead><tr><th>Flow</th><th>TC IDs</th><th>Error</th></tr></thead>
+    <tbody>
+    {% for f in report.failures %}
+      <tr><td>{{ f.flow_id | e }}</td><td>{{ f.tc_ids | join(', ') | e }}</td><td>{{ f.error | e }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</body>
+</html>
