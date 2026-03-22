@@ -1,7 +1,7 @@
 {
   "name": "qa-harness",
   "description": "Harness engineering for maestro-runner based QA automation — LLM succeeds by design",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "hatae94",
     "url": "https://github.com/hatae94"
@@ -9,5 +9,6 @@
   "repository": "https://github.com/hatae94/qa-automation-harness",
   "license": "MIT",
   "keywords": ["qa", "automation", "maestro-runner", "harness", "e2e", "testing"],
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
 }
