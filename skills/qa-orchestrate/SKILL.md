@@ -3,28 +3,39 @@ name: qa-orchestrate
 description: Use when asked to run QA tests, execute test suite, automate test cases, or process TC CSV files for maestro-runner based mobile QA automation
 context: fork
 agent: general-purpose
-allowed-tools: Bash(qa-harness *), Bash(ls *), Bash(cat *), Read, Glob, Grep, Write, Skill
+allowed-tools: Bash(*), Read, Glob, Grep, Write, Skill
 ---
 
 # QA Pipeline Orchestrator
 
 You are executing the QA automation pipeline. Process $ARGUMENTS through the harness.
 
-## Current State
+## CLI Setup
 
-!`qa-harness validate --flows src/flows --catalog ${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens 2>&1 | tail -5 || echo "No flows generated yet"`
-!`ls src/flows/*.yaml 2>/dev/null | wc -l | xargs echo "Generated YAML flows:"`
+The qa-harness CLI is installed in the plugin's venv. Use this alias:
+
+```bash
+QA="${CLAUDE_PLUGIN_DATA}/venv/bin/qa-harness"
+if [ ! -f "$QA" ]; then
+  QA="$(which qa-harness 2>/dev/null || echo '')"
+fi
+if [ -z "$QA" ]; then
+  echo "ERROR: qa-harness not found. Running install..."
+  "${CLAUDE_PLUGIN_ROOT}/scripts/install-qa-harness.sh"
+  QA="${CLAUDE_PLUGIN_DATA}/venv/bin/qa-harness"
+fi
+```
+
+Run the above FIRST before any qa-harness command. Then use `$QA` for all subsequent calls.
 
 ## Your Task
 
-Execute this pipeline in order. Never ask permission between stages. Always proceed to the next stage automatically.
+Execute this pipeline in order. Never ask permission between stages. Always proceed automatically.
 
 ### Stage 1: Parse TC
 
-Extract the CSV file path from $ARGUMENTS (first argument) and parse it directly.
-
 ```bash
-qa-harness parse-tc -i $ARGUMENTS -o parsed.json
+$QA parse-tc -i "$ARGUMENTS" -o parsed.json
 ```
 
 If parse succeeds, report TC count.
@@ -32,20 +43,18 @@ If parse succeeds, report TC count.
 ### Stage 2: Generate YAML
 
 ```bash
-qa-harness generate-yaml --tc parsed.json --catalog ${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens --templates ${CLAUDE_PLUGIN_ROOT}/src/templates
+$QA generate-yaml --tc parsed.json --catalog "${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens" --templates "${CLAUDE_PLUGIN_ROOT}/src/templates"
 ```
 
-If 0 YAMLs are generated, report the stats and state: "0 YAMLs generated. The bundled knowledge base does not cover these TCs. Run /qa-index with a connected device to scan the actual app."
-
-Then continue to Stage 3 regardless.
+If 0 YAMLs generated, report: "0 YAMLs generated. The bundled knowledge base does not cover these TCs. Run /qa-index with a connected device to scan the actual app." Then continue.
 
 ### Stage 3: Validate
 
 ```bash
-qa-harness validate --flows src/flows --catalog ${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens
+$QA validate --flows src/flows --catalog "${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens"
 ```
 
-If validation has errors, report which TCs failed and why. Continue with valid flows.
+If errors, report which TCs failed and why. Continue with valid flows.
 
 ### Stage 4: Report
 
@@ -57,12 +66,7 @@ Summarize:
 
 ## IMPORTANT
 - Do NOT run --help. Execute commands directly as shown above.
-- Do NOT read or parse files manually. Use qa-harness CLI exclusively.
+- Do NOT read or parse files manually. Use $QA CLI exclusively.
 - Do NOT ask the user questions. Handle errors automatically.
-- Do NOT use python3 -c for analysis. Use qa-harness CLI output.
-
-## Rules
-
-- Use `qa-harness` CLI for all operations. Do NOT manually parse CSV or generate YAML.
-- If `qa-harness` is not installed, tell the user to run `pip install -e .` in the project directory.
-- $ARGUMENTS contains the CSV file path. Use it directly as the first argument to parse-tc.
+- Do NOT use python3 -c for analysis. Use $QA CLI output.
+- If $QA is not found after install attempt, report the error and stop.
