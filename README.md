@@ -38,37 +38,56 @@ Deterministic test generation and execution framework for hybrid WebView mobile 
 
 ## Installation
 
-### 다른 노트북에서 설치 (Clone + Plugin + Python)
+### 방법 1: Marketplace로 설치 (권장 — clone 불필요)
+
+다른 노트북에서 GitHub 레포 URL만으로 설치할 수 있습니다.
 
 ```bash
-# 1. 레포 클론 (SSH)
+# 1. Marketplace 등록 (1회만)
+claude plugin marketplace add hatae94/qa-automation-harness
+
+# 2. 플러그인 설치
+claude plugin install qa-automation-harness@hatae94-qa-automation-harness
+
+# 설치 확인 — /qa-automation-harness:qa-run 등 skill 사용 가능
+claude
+
+# 삭제
+claude plugin uninstall qa-automation-harness@hatae94-qa-automation-harness
+```
+
+또는 `~/.claude/settings.json`에 직접 등록:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "qa-harness": {
+      "source": { "source": "github", "repo": "hatae94/qa-automation-harness" }
+    }
+  },
+  "enabledPlugins": {
+    "qa-automation-harness@qa-harness": true
+  }
+}
+```
+
+### 방법 2: Clone + 로컬 설치
+
+Python CLI 도구도 함께 사용하려면 clone이 필요합니다.
+
+```bash
+# 1. 레포 클론
 git clone git@github.com:hatae94/qa-automation-harness.git
 cd qa-automation-harness
 
 # 2. Python 패키지 설치
 pip install -e ".[dev]"
 
-# 3. Claude Code 플러그인으로 사용
+# 3. Claude Code 플러그인으로 로드
 claude --plugin-dir ./qa-automation-harness
-# → /qa-automation-harness:qa-run 등 skill 사용 가능
 
 # 4. 설치 확인
 qa-harness --help
-```
-
-> **참고:** Claude Code 플러그인은 로컬 디렉토리 기반으로 동작하므로, clone이 필수입니다.
-> `--plugin-dir`로 세션 단위 로드하거나, 아래처럼 프로젝트 설정에 영구 등록할 수 있습니다.
-
-#### 프로젝트에 영구 등록 (선택)
-
-```bash
-# 프로젝트의 .claude/settings.local.json에 추가 (git에 포함되지 않음)
-mkdir -p .claude
-cat > .claude/settings.local.json << 'EOF'
-{
-  "enabledPlugins": ["/absolute/path/to/qa-automation-harness"]
-}
-EOF
 ```
 
 ### SSH 설정 (회사 노트북에서 개인 GitHub 사용)

@@ -1,0 +1,19 @@
+{
+  "marketplace": {
+    "name": "qa-automation-harness",
+    "displayName": "QA Automation Harness",
+    "description": "Harness engineering plugins for maestro-runner based QA automation"
+  },
+  "plugins": [
+    {
+      "name": "qa-automation-harness",
+      "displayName": "QA Automation Harness",
+      "description": "Skills for deterministic QA test generation and execution — LLM succeeds by design",
+      "source": {
+        "type": "github",
+        "repo": "hatae94/qa-automation-harness"
+      },
+      "version": "0.1.0"
+    }
+  ]
+}
