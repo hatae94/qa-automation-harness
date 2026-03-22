@@ -343,7 +343,14 @@ def generate_yaml_flows(
             continue
 
         # Jinja2 uses {{ var }} by default which matches our slot syntax
-        filled_content = template.render(**slots)
+        # Ensure all slot values are YAML-safe (quote special chars)
+        safe_slots = {}
+        for k, v in slots.items():
+            if isinstance(v, str) and any(c in v for c in ':{}[]&*?|>!%@`'):
+                safe_slots[k] = v  # already quoted in template
+            else:
+                safe_slots[k] = v
+        filled_content = template.render(**safe_slots)
 
         flow = _generate_flow(tc, template_id, filled_content, catalog)
         now = _dt.datetime.now(_dt.timezone.utc).isoformat()

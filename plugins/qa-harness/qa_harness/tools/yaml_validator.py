@@ -119,15 +119,24 @@ def _check_unfilled_slots(doc: _FlowDoc) -> list[ValidationIssue]:
 def _check_commands(doc: _FlowDoc) -> list[ValidationIssue]:
     issues: list[ValidationIssue] = []
     for i, step in enumerate(doc.steps):
+        # String steps are valid maestro shorthand (e.g., "- launchApp")
+        if isinstance(step, str):
+            if step not in KNOWN_COMMANDS:
+                issues.append(ValidationIssue(
+                    severity="error", code="UNKNOWN_COMMAND",
+                    message=f'Unknown shorthand command: "{step}"',
+                    file=doc.file_name, step=i,
+                ))
+            continue
         if not isinstance(step, dict):
             issues.append(ValidationIssue(
                 severity="error", code="INVALID_STEP",
-                message=f"Step {i} is not a valid object",
+                message=f"Step {i} is not a valid object (type: {type(step).__name__})",
                 file=doc.file_name, step=i,
             ))
             continue
         for cmd in step:
-            if cmd not in KNOWN_COMMANDS:
+            if cmd not in KNOWN_COMMANDS and cmd != "#":
                 issues.append(ValidationIssue(
                     severity="error", code="UNKNOWN_COMMAND",
                     message=f'Unknown command: "{cmd}"',

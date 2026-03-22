@@ -9,8 +9,9 @@ appId: com.cupist.alpha
     file: "scripts/cdp_input.js"
     env:
       SELECTOR: "{{input_selector}}"
-      TEXT: "{{input_value}}"
-      DEVICE: "${DEVICE_ID}"
+      VALUE: "{{input_value}}"
+      DEVICE: "{{deviceId}}"
+      PORT: "{{cdpPort}}"
 - tapOn:
     id: "{{next_button}}"
 - assertVisible:
