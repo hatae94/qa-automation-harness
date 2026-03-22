@@ -15,7 +15,7 @@ Deterministic test generation and execution framework for hybrid WebView mobile 
        |      LLM: slot    LLM: 0%    |      LLM: <10%
        |      fill ONLY                |      (last resort)
        v           v           v       v
-   knowledge/  src/flows/  results/  results/
+   knowledge/  flows/      results/  results/
    (screens,   (validated  (JUnit    (HTML,
     elements,   YAML)       XML)      JSON,
     flow graph)                       Telegram)
@@ -183,7 +183,7 @@ qa-harness run cdp-stop
 ```bash
 qa-harness report generate
 qa-harness report generate --format [html|telegram|json|all]
-qa-harness report generate --tc-map src/flows/_manifest.json
+qa-harness report generate --tc-map flows/_manifest.json
 ```
 
 ### Triage Commands
@@ -303,8 +303,8 @@ The harness uses a layered configuration approach:
 │                                                                     │
 │  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────────┐  │
 │  │ TC CSV   │───>│ qa-plan  │───>│ qa-run   │───>│ qa-report    │  │
-│  │ (input)  │    │ parse +  │    │ maestro  │    │ HTML/JSON/   │  │
-│  │          │    │ generate │    │ executor │    │ Telegram     │  │
+│  │ (input)  │    │ parse +  │    │ maestro- │    │ HTML/JSON/   │  │
+│  │          │    │ generate │    │ runner   │    │ Telegram     │  │
 │  └──────────┘    └────┬─────┘    └──────────┘    └──────┬───────┘  │
 │                       │                                  │          │
 │                       │ LLM: slot                        │          │

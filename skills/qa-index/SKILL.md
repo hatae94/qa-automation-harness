@@ -3,7 +3,7 @@ name: qa-index
 description: Use when building or updating the app knowledge base — scans app screens via maestro hierarchy, indexes UI elements, builds flow graph
 context: fork
 agent: general-purpose
-allowed-tools: Bash(qa-harness *), Bash(maestro *), Bash(adb *), Read, Write, Glob
+allowed-tools: Bash(qa-harness *), Bash(maestro-runner *), Bash(adb *), Read, Write, Glob
 ---
 
 # Build App Knowledge Base

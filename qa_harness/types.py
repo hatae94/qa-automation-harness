@@ -350,8 +350,8 @@ class HarnessConfig(BaseModel):
     catalog_dir: str = "src/knowledge/screens"
     templates_dir: str = "src/templates"
     flow_graph_path: str = "src/knowledge/flow-graph.json"
-    output_dir: str = "output/flows"
-    reports_dir: str = "output/reports"
+    output_dir: str = "flows"
+    reports_dir: str = "reports"
     batch_size: int = Field(25, ge=1, le=200)
     device_id: str | None = None
     cdp_bridge: CDPBridgeConfig = Field(default_factory=CDPBridgeConfig)

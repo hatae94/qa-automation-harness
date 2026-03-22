@@ -71,7 +71,7 @@ qa-plan ──reads──> knowledge/ (from qa-index)
   |                templates/ (immutable Jinja2/YAML templates)
   |
   v
-src/flows/*.yaml  (validated, immutable)
+flows/*.yaml  (validated, immutable)
   |
   v
 qa-run ──uses──> maestro-runner + CDP bridge
@@ -92,7 +92,7 @@ qa-triage (if failures exist)
 |------|----------|-----------|
 | `knowledge/` | Screens, flow graph, element catalog, test data | qa-index |
 | `qa_harness/templates/` | Immutable Jinja2/YAML templates (git-managed) | Human (manual) |
-| `src/flows/` | Generated + validated YAML per TC | qa-plan |
+| `flows/` | Generated + validated YAML per TC | qa-plan |
 | `results/` | Execution results, screenshots, reports | qa-run, qa-report |
 | `known-issues.json` | Error pattern to tracked issue mapping | qa-triage |
 

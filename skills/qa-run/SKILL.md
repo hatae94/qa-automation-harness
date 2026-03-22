@@ -13,7 +13,7 @@ Execute validated YAML flows via maestro-runner. ZERO LLM decisions during execu
 ## Pre-flight Status
 
 !`adb devices 2>/dev/null | tail -n +2 | head -5 || echo "ADB not available"`
-!`ls src/flows/*.yaml 2>/dev/null | wc -l | xargs echo "Ready flows:"`
+!`ls flows/*.yaml 2>/dev/null | wc -l | xargs echo "Ready flows:"`
 
 ## Execution
 

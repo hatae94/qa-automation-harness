@@ -58,6 +58,8 @@ _MAPPING_RULES: list[_MappingRule] = [
     _MappingRule(r"인증 번호|인증번호|OTP", "signup-phone", "signup-phone"),
     _MappingRule(r"로그인", "login-flow", "login"),
     _MappingRule(r"인트로.*멤버십|멤버십 신청.*온보딩", "signup-phone", "signup-phone"),
+    _MappingRule(r"프로필|닉네임|생년월일|성별|사진", "profile-input", "profile-input"),
+    _MappingRule(r"스플래시|인트로.*UI", "visual-check", "visual-check"),
     _MappingRule(r"스플래시|인트로", "signup-phone", "generic"),
 ]
 

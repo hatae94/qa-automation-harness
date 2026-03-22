@@ -12,21 +12,15 @@ You are executing the QA automation pipeline. Process $ARGUMENTS through the har
 
 ## CLI Setup
 
-The qa-harness CLI is installed in the plugin's venv. Use this alias:
+Run this setup block FIRST, exactly once. All subsequent stages reference `$QA` directly.
 
 ```bash
+# Setup (run this FIRST, exactly once)
 QA="${CLAUDE_PLUGIN_DATA}/venv/bin/qa-harness"
-if [ ! -f "$QA" ]; then
-  QA="$(which qa-harness 2>/dev/null || echo '')"
-fi
-if [ -z "$QA" ]; then
-  echo "ERROR: qa-harness not found. Running install..."
-  "${CLAUDE_PLUGIN_ROOT}/scripts/install-qa-harness.sh"
-  QA="${CLAUDE_PLUGIN_DATA}/venv/bin/qa-harness"
-fi
+[ -f "$QA" ] || QA="$(which qa-harness 2>/dev/null)"
+[ -z "$QA" ] && { "${CLAUDE_PLUGIN_ROOT}/scripts/install-qa-harness.sh" && QA="${CLAUDE_PLUGIN_DATA}/venv/bin/qa-harness"; }
+echo "QA=$QA"
 ```
-
-Run the above FIRST before any qa-harness command. Then use `$QA` for all subsequent calls.
 
 ## Your Task
 
@@ -43,7 +37,7 @@ If parse succeeds, report TC count.
 ### Stage 2: Generate YAML
 
 ```bash
-$QA generate-yaml --tc parsed.json --catalog "${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens" --templates "${CLAUDE_PLUGIN_ROOT}/src/templates"
+$QA generate-yaml --tc parsed.json --catalog "${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens" --templates "${CLAUDE_PLUGIN_ROOT}/src/templates" --output flows/
 ```
 
 If 0 YAMLs generated, report: "0 YAMLs generated. The bundled knowledge base does not cover these TCs. Run /qa-index with a connected device to scan the actual app." Then continue.
@@ -51,7 +45,7 @@ If 0 YAMLs generated, report: "0 YAMLs generated. The bundled knowledge base doe
 ### Stage 3: Validate
 
 ```bash
-$QA validate --flows src/flows --catalog "${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens"
+$QA validate --flows flows/ --catalog "${CLAUDE_PLUGIN_ROOT}/src/knowledge/screens"
 ```
 
 If errors, report which TCs failed and why. Continue with valid flows.
@@ -63,6 +57,8 @@ Summarize:
 - YAMLs generated
 - Validation pass/fail counts
 - Any errors encountered
+
+Do NOT suggest next steps or recommend actions. Report results and stop.
 
 ## IMPORTANT
 - Do NOT run --help. Execute commands directly as shown above.

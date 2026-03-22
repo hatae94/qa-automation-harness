@@ -285,10 +285,10 @@ def _check_runscript_env(doc: _FlowDoc) -> list[ValidationIssue]:
                     message="cdp_input.js missing SELECTOR env var",
                     file=doc.file_name, step=i,
                 ))
-            if "VALUE" not in env:
+            if "VALUE" not in env and "TEXT" not in env:
                 issues.append(ValidationIssue(
                     severity="error", code="MISSING_ENV_VALUE",
-                    message="cdp_input.js missing VALUE env var",
+                    message="cdp_input.js missing VALUE or TEXT env var",
                     file=doc.file_name, step=i,
                 ))
     return issues
@@ -392,6 +392,26 @@ def validate_flows(
 # CLI
 # ---------------------------------------------------------------------------
 
+def _discover_flow_graph(catalog_dir: Path) -> Path | None:
+    """Auto-discover flow-graph.json near the catalog directory.
+
+    Search order:
+      1. <catalog>/../flow-graph.json
+      2. <catalog>/../../flow-graph.json
+      3. <catalog>/../flows/flow-graph.json
+    """
+    candidates = [
+        catalog_dir.parent / "flow-graph.json",
+        catalog_dir.parent.parent / "flow-graph.json",
+        catalog_dir.parent / "flows" / "flow-graph.json",
+    ]
+    for candidate in candidates:
+        if candidate.is_file():
+            logger.info("[validator] Auto-discovered flow graph: %s", candidate)
+            return candidate
+    return None
+
+
 @click.command("validate")
 @click.option("--flows", "flows_dir", required=True, type=click.Path(exists=True, path_type=Path))
 @click.option("--catalog", "catalog_dir", required=True, type=click.Path(exists=True, path_type=Path))
@@ -399,6 +419,8 @@ def validate_flows(
 def validate_cmd(flows_dir: Path, catalog_dir: Path, flow_graph_path: Path | None) -> None:
     """Validate generated YAML flows against the catalog."""
     logging.basicConfig(level=logging.INFO, format="%(message)s")
+    if flow_graph_path is None:
+        flow_graph_path = _discover_flow_graph(catalog_dir)
     if flow_graph_path is None:
         flow_graph_path = catalog_dir.parent / "flow-graph.json"
     result = validate_flows(flows_dir, catalog_dir, flow_graph_path)

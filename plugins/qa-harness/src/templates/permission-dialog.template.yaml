@@ -9,7 +9,7 @@
 # IMPORTANT: System permission dialogs are NOT in the app's WebView.
 # CDP bridge MUST NOT be used. Use native tapOn with text matching.
 #
-# M4 fix: runFlow+commands is invalid Maestro YAML. Each conditional
+# M4 fix: runFlow+commands is invalid maestro-compatible YAML. Each conditional
 # tap is now a standalone tapOn with optional:true.
 
 tags:

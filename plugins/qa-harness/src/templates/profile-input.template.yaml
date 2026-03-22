@@ -1,0 +1,17 @@
+appId: com.cupist.alpha
+---
+- launchApp
+- runFlow:
+    file: "flows/login_prerequisite.yaml"
+- tapOn:
+    id: "{{profile_field_selector}}"
+- runScript:
+    file: "scripts/cdp_input.js"
+    env:
+      SELECTOR: "{{input_selector}}"
+      TEXT: "{{input_value}}"
+      DEVICE: "${DEVICE_ID}"
+- tapOn:
+    id: "{{next_button}}"
+- assertVisible:
+    id: "{{expected_result_element}}"
