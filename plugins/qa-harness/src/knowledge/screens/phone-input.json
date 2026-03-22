@@ -1,0 +1,66 @@
+{
+  "id": "phone-input",
+  "name": "전화번호 입력 페이지",
+  "description": "Phone number entry screen. User enters their phone number and taps the verification button to receive OTP.",
+  "rendererType": "webview",
+  "elements": [
+    {
+      "id": "title",
+      "screen": "phone-input",
+      "selector": "phone-input.title",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "전화번호를 입력해주세요",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='phone-input.title']",
+      "enabled": true
+    },
+    {
+      "id": "phone-field",
+      "screen": "phone-input",
+      "selector": "phone-input.phone-field",
+      "selectorType": "testID",
+      "type": "input",
+      "label": "전화번호 입력 필드",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='phone-input.phone-field'] input",
+      "enabled": true
+    },
+    {
+      "id": "auto-fill-btn",
+      "screen": "phone-input",
+      "selector": "phone-input.auto-fill",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "자동입력 번호",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='phone-input.auto-fill']",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "submit-btn",
+      "screen": "phone-input",
+      "selector": "phone-input.submit-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "인증번호 받기",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='phone-input.submit-btn']",
+      "enabled": true
+    },
+    {
+      "id": "back-btn",
+      "screen": "phone-input",
+      "selector": "phone-input.back-btn",
+      "selectorType": "testID",
+      "type": "icon",
+      "label": "< 뒤로가기",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='phone-input.back-btn']",
+      "enabled": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_15", "LoginPage_16", "LoginPage_17", "LoginPage_18", "LoginPage_19", "LoginPage_20", "LoginPage_21", "LoginPage_22"],
+  "preconditions": ["Completed onboarding confirmation"]
+}

@@ -1,0 +1,61 @@
+{
+  "description": "Test account pool for QA automation. All phone numbers and credentials are fake test data.",
+  "accounts": [
+    {
+      "id": "test-account-001",
+      "type": "new-user",
+      "phoneNumber": "01077322441",
+      "otpCode": "123456",
+      "userInfo": {
+        "name": "테스트유저A",
+        "gender": "male",
+        "birthYear": 1995,
+        "email": "testuser_a@example.com",
+        "region": "서울"
+      },
+      "locked": false,
+      "lockedBy": null,
+      "lastUsed": null,
+      "notes": "Fresh account for signup flow testing"
+    },
+    {
+      "id": "test-account-002",
+      "type": "existing-user",
+      "phoneNumber": "01088443322",
+      "otpCode": "654321",
+      "userInfo": {
+        "name": "테스트유저B",
+        "gender": "female",
+        "birthYear": 1990,
+        "email": "testuser_b@example.com",
+        "region": "부산"
+      },
+      "locked": false,
+      "lockedBy": null,
+      "lastUsed": null,
+      "notes": "Already registered account for login flow testing"
+    },
+    {
+      "id": "test-account-003",
+      "type": "already-registered",
+      "phoneNumber": "01099554433",
+      "otpCode": "111222",
+      "userInfo": {
+        "name": "테스트유저C",
+        "gender": "male",
+        "birthYear": 1988,
+        "email": "testuser_c@example.com",
+        "region": "인천"
+      },
+      "locked": false,
+      "lockedBy": null,
+      "lastUsed": null,
+      "notes": "Account for testing already-registered flow (signup with existing number)"
+    }
+  ],
+  "pool": {
+    "maxConcurrent": 3,
+    "lockTimeoutMs": 300000,
+    "autoReleaseOnFailure": true
+  }
+}

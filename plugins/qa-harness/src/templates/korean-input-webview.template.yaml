@@ -1,0 +1,29 @@
+# Korean Input (WebView Renderer) Template
+# Uses nativeValueSetter + dispatchEvent to trigger React onChange.
+#
+# Slots:
+#   {{ cdpSelector }} - source: catalog  - CSS selector for the WebView element
+#   {{ inputText }}   - source: testdata - Text to input (Korean or any)
+#   {{ deviceId }}    - source: computed  - Target device identifier
+#   {{ cdpPort }}     - source: computed  - CDP bridge port (default: 5100)
+
+tags:
+  - korean-input
+  - webview
+  - cdp-nativeValueSetter
+
+---
+# Step 1: Input text via CDP nativeValueSetter (single evaluate call)
+- runScript:
+    file: "scripts/cdp_input.js"
+    env:
+      SELECTOR: "{{ cdpSelector }}"
+      VALUE: "{{ inputText }}"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+      METHOD: "nativeValueSetter"
+    label: "Korean WebView input via nativeValueSetter"
+
+# Step 2: Brief wait for React state update
+# Minor fix: waitForAnimationToEnd takes no timeout param
+- waitForAnimationToEnd

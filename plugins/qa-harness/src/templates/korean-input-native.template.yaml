@@ -1,0 +1,34 @@
+# Korean Input (Native Renderer) Template
+# Uses ADB clipboard workaround for Korean text input.
+#
+# Slots:
+#   {{ targetSelector }} - source: catalog  - Native element testID
+#   {{ inputText }}      - source: testdata - Korean text to input
+#   {{ deviceId }}       - source: computed  - ADB device serial
+
+tags:
+  - korean-input
+  - native
+  - adb-clipboard
+
+---
+# Step 1: Focus the target input field
+- tapOn:
+    id: "{{ targetSelector }}"
+
+# Step 2: Clear existing text
+- eraseText:
+    charactersToErase: 50
+
+# Step 3: Copy Korean text to ADB clipboard and paste
+- runScript:
+    file: "scripts/adb_korean_input.sh"
+    env:
+      TEXT: "{{ inputText }}"
+      DEVICE: "{{ deviceId }}"
+    label: "Korean input via ADB clipboard"
+
+# Step 4: Verify text was entered
+- assertVisible:
+    text: "{{ inputText }}"
+    optional: true

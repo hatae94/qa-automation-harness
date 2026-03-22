@@ -1,0 +1,52 @@
+{
+  "id": "intro",
+  "name": "인트로 화면",
+  "description": "App launch intro screen with splash transition, login and signup buttons",
+  "rendererType": "webview",
+  "elements": [
+    {
+      "id": "splash-image",
+      "screen": "intro",
+      "selector": "intro-v2.splash-image",
+      "selectorType": "testID",
+      "type": "image",
+      "label": "스플래시 이미지",
+      "rendererType": "webview",
+      "enabled": true
+    },
+    {
+      "id": "intro-image",
+      "screen": "intro",
+      "selector": "intro-v2.intro-image",
+      "selectorType": "testID",
+      "type": "image",
+      "label": "인트로 이미지",
+      "rendererType": "webview",
+      "enabled": true
+    },
+    {
+      "id": "signup-btn",
+      "screen": "intro",
+      "selector": "intro-v2.click-signup-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "멤버십 신청",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='intro-v2.click-signup-btn']",
+      "enabled": true
+    },
+    {
+      "id": "login-btn",
+      "screen": "intro",
+      "selector": "intro-v2.click-login-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "로그인",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='intro-v2.click-login-btn']",
+      "enabled": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_1", "LoginPage_2", "LoginPage_3", "LoginPage_4", "LoginPage_5", "LoginPage_6", "LoginPage_7", "LoginPage_8", "LoginPage_9", "LoginPage_10"],
+  "preconditions": ["App installed and launched"]
+}

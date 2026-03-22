@@ -1,0 +1,39 @@
+# Permission Dialog Handler Template
+# Covers: System permission dialogs (IDFA, notifications, photos)
+# Renderer: Native ONLY (system dialogs are not in WebView)
+#
+# Slots:
+#   {{ permissionAction }} - source: literal - "allow" or "deny"
+#   {{ permissionType }}   - source: literal - "tracking", "notification", or "photo"
+#
+# IMPORTANT: System permission dialogs are NOT in the app's WebView.
+# CDP bridge MUST NOT be used. Use native tapOn with text matching.
+#
+# M4 fix: runFlow+commands is invalid Maestro YAML. Each conditional
+# tap is now a standalone tapOn with optional:true.
+
+tags:
+  - permission
+  - native
+  - system-dialog
+
+---
+# Handle IDFA tracking permission (iOS) -- tap if visible
+- tapOn:
+    text: "허용"
+    optional: true
+
+# Handle notification permission -- tap if visible
+- tapOn:
+    text: "허용"
+    optional: true
+
+# Handle photo/video access permission (Android)
+- tapOn:
+    text: "While Using the App"
+    optional: true
+
+# Handle app exit confirmation dialog
+- tapOn:
+    text: "{{ permissionAction }}"
+    optional: true

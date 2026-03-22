@@ -1,0 +1,87 @@
+{
+  "id": "permission-dialog",
+  "name": "권한 요청 다이얼로그",
+  "description": "System permission dialogs (IDFA tracking, notification, photo/video access). These are native Android/iOS system dialogs, not part of the WebView.",
+  "rendererType": "native",
+  "elements": [
+    {
+      "id": "tracking-allow-btn",
+      "screen": "permission-dialog",
+      "selector": "허용",
+      "selectorType": "text",
+      "type": "button",
+      "label": "앱 추적 허용",
+      "rendererType": "native",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "tracking-deny-btn",
+      "screen": "permission-dialog",
+      "selector": "앱에게 추적하지 않도록 요청",
+      "selectorType": "text",
+      "type": "button",
+      "label": "앱 추적 거부",
+      "rendererType": "native",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "notification-allow-btn",
+      "screen": "permission-dialog",
+      "selector": "허용",
+      "selectorType": "text",
+      "type": "button",
+      "label": "알림 허용",
+      "rendererType": "native",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "notification-deny-btn",
+      "screen": "permission-dialog",
+      "selector": "허용 안 함",
+      "selectorType": "text",
+      "type": "button",
+      "label": "알림 거부 (허용 안 함)",
+      "rendererType": "native",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "photo-allow-btn",
+      "screen": "permission-dialog",
+      "selector": "While Using the App",
+      "selectorType": "text",
+      "type": "button",
+      "label": "사진/동영상 접근 허용",
+      "rendererType": "native",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "exit-confirm-yes",
+      "screen": "permission-dialog",
+      "selector": "예",
+      "selectorType": "text",
+      "type": "button",
+      "label": "앱 종료 확인 (예)",
+      "rendererType": "native",
+      "enabled": true,
+      "optional": true
+    },
+    {
+      "id": "exit-confirm-back",
+      "screen": "permission-dialog",
+      "selector": "돌아가기",
+      "selectorType": "text",
+      "type": "button",
+      "label": "앱 종료 취소 (돌아가기)",
+      "rendererType": "native",
+      "enabled": true,
+      "optional": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_3", "LoginPage_4", "LoginPage_5", "LoginPage_6", "LoginPage_7", "LoginPage_8", "LoginPage_9"],
+  "preconditions": ["System permission dialog is displayed"]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "already-registered",
+  "name": "이미 가입된 회원 팝업",
+  "description": "Popup shown when user tries to sign up with a phone number that is already registered. Offers options to login instead or go back.",
+  "rendererType": "webview",
+  "elements": [
+    {
+      "id": "title",
+      "screen": "already-registered",
+      "selector": "already-registered.title",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "이미 가입된 회원입니다",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='already-registered.title']",
+      "enabled": true
+    },
+    {
+      "id": "message",
+      "screen": "already-registered",
+      "selector": "already-registered.message",
+      "selectorType": "testID",
+      "type": "text",
+      "label": "이미 가입된 번호 안내 메시지",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='already-registered.message']",
+      "enabled": true
+    },
+    {
+      "id": "login-btn",
+      "screen": "already-registered",
+      "selector": "already-registered.login-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "로그인하기",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='already-registered.login-btn']",
+      "enabled": true
+    },
+    {
+      "id": "back-btn",
+      "screen": "already-registered",
+      "selector": "already-registered.back-btn",
+      "selectorType": "testID",
+      "type": "button",
+      "label": "돌아가기",
+      "rendererType": "webview",
+      "cdpSelector": "[data-testid='already-registered.back-btn']",
+      "enabled": true
+    }
+  ],
+  "relatedTCIds": ["LoginPage_28", "LoginPage_29", "LoginPage_30"],
+  "preconditions": ["OTP verified with already-registered phone number"]
+}

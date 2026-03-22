@@ -1,0 +1,107 @@
+# Signup Phone Input + OTP Verification Template
+# Covers: New user signup flow from intro through phone verification
+# Renderer: WebView (CDP bridge required) + Native (permission dialogs)
+#
+# Slots:
+#   {{ phoneNumber }} - source: testdata - User phone number (digits only)
+#   {{ otpCode }}     - source: testdata - OTP verification code
+#   {{ deviceId }}    - source: computed  - Target device identifier
+#   {{ cdpPort }}     - source: computed  - CDP bridge port (default: 5100)
+#
+# M5 fix: sub-flow file references now use proper relative paths.
+
+appId: com.cupist.alphaz
+tags:
+  - signup
+  - phone-verification
+  - hybrid
+
+---
+# Step 1: Launch app
+- launchApp:
+    appId: com.cupist.alphaz
+    clearState: true
+
+# Step 2: Wait for intro screen
+- extendedWaitUntil:
+    visible:
+      id: "intro-v2.click-signup-btn"
+    timeout: 15000
+
+# Step 3: Handle optional permission dialogs (native renderer)
+- tapOn:
+    text: "허용"
+    optional: true
+
+# Step 4: Tap signup button via CDP
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      SELECTOR: "[data-testid='intro-v2.click-signup-btn']"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Tap signup button"
+
+# Step 5: Wait for onboarding screen
+- extendedWaitUntil:
+    visible:
+      id: "onboarding.confirm-btn"
+    timeout: 10000
+
+# Step 6: Tap confirm on onboarding
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      SELECTOR: "[data-testid='onboarding.confirm-btn']"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Confirm onboarding"
+
+# Step 7: Wait for phone input screen
+- extendedWaitUntil:
+    visible:
+      id: "phone-input.phone-field"
+    timeout: 10000
+
+# Step 8: Input phone number via CDP
+- runScript:
+    file: "scripts/cdp_input.js"
+    env:
+      SELECTOR: "[data-testid='phone-input.phone-field'] input"
+      VALUE: "{{ phoneNumber }}"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Enter phone number"
+
+# Step 9: Wait for submit button to be enabled
+- waitForAnimationToEnd
+
+# Step 10: Tap submit
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      SELECTOR: "[data-testid='phone-input.submit-btn']"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Tap get verification code"
+
+# Step 11: Wait for OTP screen
+- extendedWaitUntil:
+    visible:
+      id: "otp-verify.otp-field"
+    timeout: 10000
+
+# Step 12: Assert toast message appeared
+- assertVisible:
+    text: "인증번호를 전송했습니다"
+    optional: true
+
+# Step 13: Input OTP code
+- runScript:
+    file: "scripts/cdp_input.js"
+    env:
+      SELECTOR: "[data-testid='otp-verify.otp-field'] input"
+      VALUE: "{{ otpCode }}"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Enter OTP code"

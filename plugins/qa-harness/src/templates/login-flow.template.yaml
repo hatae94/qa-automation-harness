@@ -1,0 +1,83 @@
+# Login Flow Template
+# Covers: Existing user login from intro screen
+# Renderer: WebView (CDP bridge required)
+#
+# Slots:
+#   {{ phoneNumber }} - source: testdata - User phone number (digits only)
+#   {{ otpCode }}     - source: testdata - OTP verification code
+#   {{ deviceId }}    - source: computed  - Target device identifier
+#   {{ cdpPort }}     - source: computed  - CDP bridge port (default: 5100)
+
+appId: com.cupist.alphaz
+tags:
+  - login
+  - existing-user
+  - webview
+
+---
+# Step 1: Launch app
+- launchApp:
+    appId: com.cupist.alphaz
+    clearState: true
+
+# Step 2: Wait for intro screen to load
+- extendedWaitUntil:
+    visible:
+      id: "intro-v2.click-login-btn"
+    timeout: 15000
+
+# Step 3: Tap login button via CDP (WebView element)
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      SELECTOR: "[data-testid='intro-v2.click-login-btn']"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Tap login button"
+
+# Step 4: Wait for login page
+- extendedWaitUntil:
+    visible:
+      id: "login.phone-field"
+    timeout: 10000
+
+# Step 5: Input phone number via CDP
+- runScript:
+    file: "scripts/cdp_input.js"
+    env:
+      SELECTOR: "[data-testid='login.phone-field'] input"
+      VALUE: "{{ phoneNumber }}"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Enter phone number"
+
+# Step 6: Tap submit button
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      SELECTOR: "[data-testid='login.submit-btn']"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Tap login submit"
+
+# Step 7: Wait for OTP screen
+- extendedWaitUntil:
+    visible:
+      id: "otp-verify.otp-field"
+    timeout: 10000
+
+# Step 8: Input OTP code
+- runScript:
+    file: "scripts/cdp_input.js"
+    env:
+      SELECTOR: "[data-testid='otp-verify.otp-field'] input"
+      VALUE: "{{ otpCode }}"
+      DEVICE: "{{ deviceId }}"
+      PORT: "{{ cdpPort }}"
+    label: "Enter OTP code"
+
+# Step 9: Assert login success (wait for main screen)
+- extendedWaitUntil:
+    notVisible:
+      id: "otp-verify.otp-field"
+    timeout: 15000
