@@ -18,9 +18,9 @@ if [ ! -d "$DATA_DIR/venv" ]; then
   python3 -m venv "$DATA_DIR/venv"
 fi
 
-# Activate and install
+# Activate and install (non-editable: editable breaks in plugin cache)
 source "$DATA_DIR/venv/bin/activate"
-pip install -q -e "$PLUGIN_ROOT"
+pip install -q "$PLUGIN_ROOT"
 
 # Cache version marker
 cp "$PLUGIN_ROOT/pyproject.toml" "$DATA_DIR/pyproject.toml"
