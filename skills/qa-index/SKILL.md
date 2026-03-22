@@ -45,6 +45,12 @@ qa-harness index detect-renderer --device $0
 qa-harness index validate
 ```
 
+## IMPORTANT
+- Do NOT run --help. Execute commands directly as shown above.
+- Do NOT read or parse files manually. Use qa-harness CLI exclusively.
+- Do NOT ask the user questions. Handle errors automatically.
+- Do NOT use python3 -c for analysis. Use qa-harness CLI output.
+
 ## Rules
 
 - This is a ONE-TIME operation (or after app UI changes).

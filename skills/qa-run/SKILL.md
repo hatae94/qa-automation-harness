@@ -20,7 +20,7 @@ Execute validated YAML flows via maestro-runner. ZERO LLM decisions during execu
 ### 1. Pre-flight
 
 ```bash
-qa-harness run --dry-run --tier smoke
+qa-harness run --dry-run
 ```
 
 Stop and report if pre-flight fails.
@@ -28,23 +28,29 @@ Stop and report if pre-flight fails.
 ### 2. CDP Bridge
 
 ```bash
-qa-harness run cdp-start
+qa-harness cdp start
 ```
 
 ### 3. Execute
 
 ```bash
-qa-harness run --tier smoke
+qa-harness run
 ```
 
-$ARGUMENTS overrides: `<tier>` or `<tier> <device-id>`
+$ARGUMENTS overrides: `--device <id>` or `--batch-size N`
 
 ### 4. Cleanup + Report
 
 ```bash
-qa-harness run cdp-stop
-qa-harness report generate --format all
+qa-harness cdp stop
+qa-harness report --tc-map parsed.json
 ```
+
+## IMPORTANT
+- Do NOT run --help. Execute commands directly as shown above.
+- Do NOT read or parse files manually. Use qa-harness CLI exclusively.
+- Do NOT ask the user questions. Handle errors automatically.
+- Do NOT use python3 -c for analysis. Use qa-harness CLI output.
 
 ## Rules
 

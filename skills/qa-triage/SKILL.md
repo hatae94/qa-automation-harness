@@ -37,6 +37,12 @@ $ARGUMENTS: TC ID to analyze, or empty for all failures.
 qa-harness triage summary
 ```
 
+## IMPORTANT
+- Do NOT run --help. Execute commands directly as shown above.
+- Do NOT read or parse files manually. Use qa-harness CLI exclusively.
+- Do NOT ask the user questions. Handle errors automatically.
+- Do NOT use python3 -c for analysis. Use qa-harness CLI output.
+
 ## Rules
 
 - Classification is rules-based pattern matching. LLM is LAST RESORT (<10%).

@@ -90,6 +90,12 @@ claude --plugin-dir ./qa-automation-harness
 qa-harness --help
 ```
 
+### Updating the Plugin
+
+```bash
+claude plugin update qa-harness@qa-harness
+```
+
 ### SSH 설정 (회사 노트북에서 개인 GitHub 사용)
 
 ```bash

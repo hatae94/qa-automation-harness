@@ -18,10 +18,10 @@ Generate reports from test execution results.
 ## Execute
 
 ```bash
-qa-harness report generate --format all
+qa-harness report --tc-map parsed.json
 ```
 
-$ARGUMENTS overrides: `<format>` (html, telegram, json, all)
+$ARGUMENTS overrides: `--results <dir>` or `--output <dir>`
 
 ## Output
 
@@ -29,6 +29,12 @@ Reports saved to `results/`:
 - `report.html` — detailed with screenshots
 - `summary.txt` — Telegram-ready
 - `results.json` — machine-readable
+
+## IMPORTANT
+- Do NOT run --help. Execute commands directly as shown above.
+- Do NOT read or parse files manually. Use qa-harness CLI exclusively.
+- Do NOT ask the user questions. Handle errors automatically.
+- Do NOT use python3 -c for analysis. Use qa-harness CLI output.
 
 ## Rules
 

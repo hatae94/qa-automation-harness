@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Harness engineering plugins for maestro-runner based QA automation",
-    "version": "0.1.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
@@ -16,7 +16,7 @@
         "url": "https://github.com/hatae94/qa-automation-harness.git"
       },
       "description": "Skills for deterministic QA test generation and execution — LLM succeeds by design",
-      "version": "0.1.0"
+      "version": "0.3.0"
     }
   ]
 }
