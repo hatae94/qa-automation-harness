@@ -1,5 +1,5 @@
 {
-  "name": "qa-automation-harness",
+  "name": "qa-harness",
   "description": "Harness engineering for maestro-runner based QA automation — LLM succeeds by design",
   "version": "0.1.0",
   "author": {

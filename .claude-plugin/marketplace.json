@@ -1,5 +1,5 @@
 {
-  "name": "qa-automation-harness-marketplace",
+  "name": "qa-harness",
   "owner": {
     "name": "hatae94",
     "email": "gkxo5959@naver.com"
@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "qa-automation-harness",
+      "name": "qa-harness",
       "source": {
         "source": "url",
         "url": "https://github.com/hatae94/qa-automation-harness.git"
