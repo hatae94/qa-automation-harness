@@ -1,0 +1,27 @@
+# TC: LoginPage_7 — 인트로 > 뒤로가기 실행 (앱 종료 다이얼로그)
+# Platform: RN (Native system dialog)
+# Selector Strategy: text (primary)
+# Text Match: POSSIBLE (system dialog button text)
+
+appId: com.alphaz.app
+---
+- launchApp
+- waitForAnimationToEnd:
+    timeout: 5000
+
+# 시스템 뒤로가기 트리거
+- pressKey: back
+
+# Expected: 종료 확인 다이얼로그
+# 시스템 다이얼로그의 버튼 텍스트로 매칭
+- assertVisible:
+    text: "예"
+    timeout: 3000
+
+- assertVisible:
+    text: "돌아가기"
+    timeout: 3000
+
+# '돌아가기' 탭하여 앱으로 복귀
+- tapOn:
+    text: "돌아가기"

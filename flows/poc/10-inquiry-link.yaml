@@ -1,0 +1,23 @@
+# TC: LoginPage_30 — [문제가 있으신가요?] 클릭
+# Platform: RN (Native) / WebView (context dependent)
+# Selector Strategy: text contains (primary) > testID (fallback)
+# Text Match: POSSIBLE (fuzzy — code has prefix '인증에')
+
+appId: com.alphaz.app
+---
+# Note: TC says "문제가 있으신가요?", code says "인증에 문제가 있으신가요?"
+# contains 매칭으로 대응
+
+# RN context
+- tapOn:
+    text: "문제가 있으신가요"
+
+# WebView fallback
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      TAP_STRATEGY: "xpath_contains"
+      TAP_TEXT: "문제가 있으신가요"
+      FALLBACK_XPATH: "//*[contains(text(),'문제가 있으신가요')]"
+
+# Expected: 채널톡 문의하기 페이지로 이동

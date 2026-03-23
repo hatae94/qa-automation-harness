@@ -1,0 +1,30 @@
+# TC: LoginPage_41 — 이미 가입된 번호 바텀팝업
+# Platform: WebView
+# Selector Strategy: text (primary)
+# Text Match: POSSIBLE (exact match in code)
+
+appId: com.alphaz.app
+---
+# Precondition: 이미 가입된 전화번호로 인증 완료 상태
+
+# 바텀시트 텍스트 확인
+- assertVisible:
+    text: "이미 멤버십 신청된 번호입니다"
+    timeout: 5000
+
+# 버튼 텍스트 확인
+- assertVisible:
+    text: "해당 번호로 계속하기"
+    timeout: 3000
+
+- assertVisible:
+    text: "다른 번호 입력"
+    timeout: 3000
+
+# '다른 번호 입력' 탭
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      TAP_STRATEGY: "text"
+      TAP_TEXT: "다른 번호 입력"
+      FALLBACK_XPATH: "//button[contains(text(),'다른 번호 입력')]"

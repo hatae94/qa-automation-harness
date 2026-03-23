@@ -1,0 +1,14 @@
+# TC: LoginPage_1 — 스플래시 이미지 노출
+# Platform: RN (Native)
+# Selector Strategy: wait (no text available)
+# Text Match: IMPOSSIBLE (image only)
+
+appId: com.alphaz.app
+---
+- launchApp
+- waitForAnimationToEnd:
+    timeout: 5000
+# 스플래시는 이미지 전용 — 텍스트 매칭 불가
+# SplashProvider가 2초 최소 표시 후 auto-hide
+# 대안: screenshot 캡처 후 이미지 비교
+- takeScreenshot: "splash_visible"

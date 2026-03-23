@@ -1,0 +1,19 @@
+# TC: LoginPage_23 — [인증번호 받기] 버튼 클릭
+# Platform: WebView
+# Selector Strategy: text (primary) > xpath (fallback)
+# Text Match: POSSIBLE (exact match in code)
+
+appId: com.alphaz.app
+---
+# Precondition: 전화번호 입력 완료 상태
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      TAP_STRATEGY: "text"
+      TAP_TEXT: "인증번호 받기"
+      FALLBACK_XPATH: "//button[contains(text(),'인증번호 받기')]"
+
+# Expected: 인증번호 입력 페이지 이동 + 토스트
+- assertVisible:
+    text: "인증번호를 입력해 주세요"
+    timeout: 5000

@@ -1,0 +1,21 @@
+# TC: LoginPage_28 — 인증횟수 초과 에러 메시지
+# Platform: WebView
+# Selector Strategy: text contains (primary) > xpath (fallback)
+# Text Match: POSSIBLE (fuzzy — space difference)
+
+appId: com.alphaz.app
+---
+# Precondition: 인증번호 5회 연속 요청 상태
+# Note: TC says "시도해주세요", code says "시도해 주세요" (space diff)
+
+- assertVisible:
+    text: "인증 횟수 초과"
+    timeout: 5000
+
+# Full text verification via CDP
+- runScript:
+    file: "scripts/assert_text_remote.js"
+    env:
+      ASSERT_STRATEGY: "contains"
+      ASSERT_TEXT: "인증 횟수 초과"
+      EXPECTED: "true"

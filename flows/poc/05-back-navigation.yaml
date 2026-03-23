@@ -1,0 +1,20 @@
+# TC: LoginPage_25 — 인증번호 페이지 좌측 상단 < 아이콘 클릭 (뒤로가기)
+# Platform: WebView
+# Selector Strategy: testID (primary) > xpath (fallback) > point (last_resort)
+# Text Match: IMPOSSIBLE (icon only, no text)
+
+appId: com.alphaz.app
+---
+# TopNavigation left="back" — 아이콘 버튼, 텍스트 없음
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      TAP_STRATEGY: "css"
+      TAP_CSS: "[class*='top-navigation'] button:first-child"
+      FALLBACK_POINT_X: "24"
+      FALLBACK_POINT_Y: "56"
+
+# Expected: 전화번호 입력 페이지로 이동
+- assertVisible:
+    text: "전화번호를 입력해주세요"
+    timeout: 5000

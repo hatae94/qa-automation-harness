@@ -1,0 +1,24 @@
+# TC: LoginPage_10 — [멤버십 신청] 버튼 클릭
+# Platform: WebView
+# Selector Strategy: text (primary) > testID (fallback) > xpath (last_resort)
+# Text Match: POSSIBLE (but TC has double space issue)
+
+appId: com.alphaz.app
+---
+- launchApp
+- waitForAnimationToEnd:
+    timeout: 5000
+
+# Primary: text match via CDP
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      TAP_STRATEGY: "text"
+      TAP_TEXT: "멤버십 신청"
+      FALLBACK_TESTID: "intro-v2.button-btn"
+      FALLBACK_XPATH: "//button[contains(text(),'멤버십 신청')]"
+
+# Expected: 온보딩 페이지로 이동
+- assertVisible:
+    text: "프라이버시, 최우선."
+    timeout: 5000

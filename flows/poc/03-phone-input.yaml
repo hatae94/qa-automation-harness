@@ -1,0 +1,21 @@
+# TC: LoginPage_15 — 전화번호 입력 페이지 진입
+# Platform: WebView
+# Selector Strategy: text title (primary) > placeholder (fallback) > xpath (last_resort)
+# Text Match: POSSIBLE (title text exists in code)
+
+appId: com.alphaz.app
+---
+# Precondition: 멤버십 신청 > 확인 완료 상태
+- assertVisible:
+    text: "전화번호를 입력해주세요"
+    timeout: 5000
+
+# Input field: placeholder "010-0000-0000"
+- runScript:
+    file: "scripts/tap_remote.js"
+    env:
+      TAP_STRATEGY: "placeholder"
+      TAP_TEXT: "010-0000-0000"
+      FALLBACK_XPATH: "//input[@type='tel']"
+      ACTION: "input"
+      INPUT_VALUE: "01012345678"

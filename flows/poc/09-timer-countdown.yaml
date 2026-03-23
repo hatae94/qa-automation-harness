@@ -1,0 +1,26 @@
+# TC: LoginPage_32 — 인증번호 입력 페이지 타이머
+# Platform: WebView
+# Selector Strategy: regex (primary) > css class (fallback)
+# Text Match: IMPOSSIBLE (dynamic countdown text)
+
+appId: com.alphaz.app
+---
+# Precondition: 인증번호 받기 완료 상태
+
+# 타이머는 동적 텍스트 (04:59 → 00:00)
+# SimpleTimer 컴포넌트, 정적 text 매칭 불가
+- runScript:
+    file: "scripts/assert_text_remote.js"
+    env:
+      ASSERT_STRATEGY: "regex"
+      ASSERT_PATTERN: "\\d{2}:\\d{2}"
+      ASSERT_CONTAINER: ".time-limit-wrapper"
+      EXPECTED: "true"
+
+# 타이머가 존재하는지 DOM 확인
+- runScript:
+    file: "scripts/assert_text_remote.js"
+    env:
+      ASSERT_STRATEGY: "element_exists"
+      ASSERT_CSS: ".time-limit-wrapper"
+      EXPECTED: "true"
