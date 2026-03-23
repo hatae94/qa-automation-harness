@@ -217,6 +217,151 @@ def cdp_health() -> None:
 
 
 # ---------------------------------------------------------------------------
+# index
+# ---------------------------------------------------------------------------
+
+@main.group("index")
+def index() -> None:
+    """Build and manage the app knowledge base."""
+
+
+@index.command("build")
+@click.option("--device", required=True, help="ADB device ID (e.g., emulator-5554)")
+@click.option("--app", required=True, help="App package name (e.g., com.alphaz.app)")
+@click.option("--output", "output_dir", default="src/knowledge/screens", type=click.Path(path_type=Path))
+def index_build(device: str, app: str, output_dir: Path) -> None:
+    """Scan app screens via maestro hierarchy and build knowledge base."""
+    import subprocess
+
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    snapshots_dir = output_dir.parent / "snapshots"
+    snapshots_dir.mkdir(parents=True, exist_ok=True)
+
+    click.echo(f"[index] Scanning app {app} on device {device}")
+    click.echo(f"[index] Output: {output_dir}")
+
+    # Dump hierarchy
+    try:
+        result = subprocess.run(
+            ["maestro", "--device", device, "hierarchy", "--compact"],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode == 0:
+            snapshot_path = snapshots_dir / "current_screen.json"
+            snapshot_path.write_text(result.stdout, encoding="utf-8")
+            click.echo(f"[index] Hierarchy saved to {snapshot_path}")
+            click.echo(f"[index] Output length: {len(result.stdout)} chars")
+        else:
+            click.echo(f"[index] maestro hierarchy failed: {result.stderr}", err=True)
+            raise SystemExit(1)
+    except FileNotFoundError:
+        click.echo("[index] ERROR: maestro CLI not found. Install maestro first.", err=True)
+        raise SystemExit(1)
+
+
+@index.command("validate")
+@click.option("--dir", "kb_dir", default="src/knowledge/screens", type=click.Path(path_type=Path))
+def index_validate(kb_dir: Path) -> None:
+    """Validate knowledge base completeness."""
+    from qa_harness.knowledge.catalog import load_catalog
+
+    kb_dir = Path(kb_dir)
+    fg_path = kb_dir.parent / "flow-graph.json"
+    catalog = load_catalog(kb_dir, fg_path)
+
+    n_screens = len(catalog.screens)
+    n_elements = len(catalog.elements_by_selector)
+    n_trans = len(catalog.flow_graph.transitions) if catalog.flow_graph else 0
+
+    click.echo(f"[index] Screens: {n_screens}")
+    click.echo(f"[index] Elements: {n_elements}")
+    click.echo(f"[index] Transitions: {n_trans}")
+
+    if n_screens == 0:
+        click.echo("[index] WARNING: No screens indexed. Run 'index build' first.", err=True)
+    if n_trans == 0:
+        click.echo("[index] WARNING: No transitions defined in flow graph.", err=True)
+
+
+@index.command("detect-renderer")
+@click.option("--device", default="emulator-5554")
+def index_detect_renderer(device: str) -> None:
+    """Detect WebView vs Native renderer for current screen."""
+    import subprocess
+
+    try:
+        result = subprocess.run(
+            ["maestro", "--device", device, "hierarchy", "--compact"],
+            capture_output=True, text=True, timeout=30,
+        )
+        if "src.web-container" in result.stdout:
+            click.echo("[index] Current screen: WEBVIEW")
+        else:
+            click.echo("[index] Current screen: NATIVE")
+    except FileNotFoundError:
+        click.echo("[index] ERROR: maestro CLI not found.", err=True)
+        raise SystemExit(1)
+
+
+# ---------------------------------------------------------------------------
+# triage
+# ---------------------------------------------------------------------------
+
+@main.group("triage")
+def triage() -> None:
+    """Analyze test failures."""
+
+
+@triage.command("analyze")
+@click.option("--results", "results_dir", default="results", type=click.Path(path_type=Path))
+@click.option("--tc-id", default=None, help="Analyze specific TC only")
+def triage_analyze(results_dir: Path, tc_id: str | None) -> None:
+    """Classify failures by error pattern (rules-based)."""
+    import re
+    results_dir = Path(results_dir)
+
+    patterns = {
+        "SELECTOR_NOT_FOUND": re.compile(r"Element .* not found"),
+        "TIMEOUT": re.compile(r"Timeout .* exceeded|timed out"),
+        "CDP_ERROR": re.compile(r"CDP connection|cdp.*refused"),
+        "APP_CRASH": re.compile(r"Process crashed|SIGKILL"),
+        "ASSERTION_FAIL": re.compile(r"assertVisible .* failed"),
+        "DEVICE_LOST": re.compile(r"device not found|offline"),
+    }
+
+    # Read failure logs if available
+    log_files = list(results_dir.glob("*.log")) + list(results_dir.glob("*.xml"))
+    if not log_files:
+        click.echo("[triage] No result files found in " + str(results_dir))
+        return
+
+    click.echo(f"[triage] Analyzing {len(log_files)} result files")
+    for lf in log_files:
+        content = lf.read_text(encoding="utf-8", errors="replace")
+        classified = False
+        for label, pat in patterns.items():
+            if pat.search(content):
+                click.echo(f"  [{label}] {lf.name}")
+                classified = True
+                break
+        if not classified:
+            click.echo(f"  [UNKNOWN] {lf.name}")
+
+
+@triage.command("summary")
+@click.option("--results", "results_dir", default="results", type=click.Path(path_type=Path))
+def triage_summary(results_dir: Path) -> None:
+    """Show triage summary of latest results."""
+    results_dir = Path(results_dir)
+    if not results_dir.exists():
+        click.echo("[triage] No results directory found.")
+        return
+    files = list(results_dir.glob("*.xml")) + list(results_dir.glob("*.json"))
+    click.echo(f"[triage] {len(files)} result files in {results_dir}")
+
+
+# ---------------------------------------------------------------------------
 # dispatch
 # ---------------------------------------------------------------------------
 
