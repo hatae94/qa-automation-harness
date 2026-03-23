@@ -1,0 +1,443 @@
+{
+  "version": "2.0",
+  "generated_at": "2026-03-23T05:24:38.402887+00:00",
+  "source_type": "web",
+  "source_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz",
+  "stats": {
+    "total_pages": 25,
+    "total_testids": 34,
+    "total_interactive": 34,
+    "coverage_pct": 100.0
+  },
+  "pages": [
+    {
+      "page_name": "additional-profile-insert",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/additional-profile-insert.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "additional-profile-insert.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 205
+        }
+      ]
+    },
+    {
+      "page_name": "chat-list",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/chat-list.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "chat-list.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "page_name": "instagram-profile-insert",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/instagram-profile-insert.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "instagram-profile-insert.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "page_name": "intro-v2",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/intro-v2.page.tsx",
+      "type": "webview",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "intro-v2.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 570
+        },
+        {
+          "id": "intro-v2.button-1-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 580
+        }
+      ]
+    },
+    {
+      "page_name": "intro",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/intro.page.tsx",
+      "type": "webview",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "intro.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 185
+        },
+        {
+          "id": "intro.button-1-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 195
+        }
+      ]
+    },
+    {
+      "page_name": "instagram-fail",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/member-approve/instagram-fail.page.tsx",
+      "type": "webview",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "instagram-fail.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 153
+        },
+        {
+          "id": "instagram-fail.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "page_name": "instagram-edit",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/member-pending/instagram-edit.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "instagram-edit.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "page_name": "instagram-reconnect",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/member-pending/instagram-reconnect.page.tsx",
+      "type": "webview",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "instagram-reconnect.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 129
+        },
+        {
+          "id": "instagram-reconnect.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 168
+        },
+        {
+          "id": "instagram-reconnect.button-1-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 179
+        }
+      ]
+    },
+    {
+      "page_name": "user-memo-edit",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/member-pending/user-memo-edit.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "user-memo-edit.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "page_name": "gather-history",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/my-page/gather-history.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "gather-history.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "page_name": "profile-edit-simple",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/my-page/profile-edit-simple.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profile-edit-simple.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 950
+        }
+      ]
+    },
+    {
+      "page_name": "profile-tag",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/my-page/profile-tag.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profile-tag.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 284
+        }
+      ]
+    },
+    {
+      "page_name": "introduction",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/my-page-profile-edit/introduction.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "introduction.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "page_name": "nickname",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/my-page-profile-edit/nickname.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "nickname.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "page_name": "privacy-guide",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/privacy-guide.page.tsx",
+      "type": "webview",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "privacy-guide.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 92
+        },
+        {
+          "id": "privacy-guide.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 125
+        }
+      ]
+    },
+    {
+      "page_name": "[profileedittype]",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/profile-edit/[profileEditType].page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profileedittype-.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "page_name": "[profileedittype]",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/profile-edit/profile-edit-type/[profileEditType].page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profileedittype-.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "page_name": "profile-insert",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/profile-insert.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profile-insert.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 317
+        }
+      ]
+    },
+    {
+      "page_name": "profile-preview",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/profile-preview.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profile-preview.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 100
+        }
+      ]
+    },
+    {
+      "page_name": "inquire-induce",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/referral/inquire-induce.page.tsx",
+      "type": "webview",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "inquire-induce.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 138
+        },
+        {
+          "id": "inquire-induce.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 167
+        },
+        {
+          "id": "inquire-induce.button-1-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 187
+        }
+      ]
+    },
+    {
+      "page_name": "inquire",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/referral/inquire.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "inquire.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "page_name": "received",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/referral/received.page.tsx",
+      "type": "webview",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "received.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 114
+        },
+        {
+          "id": "received.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "page_name": "received-emoji-all",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/station/received-emoji-all.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "received-emoji-all.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "page_name": "received-like-all",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/station/received-like-all.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "received-like-all.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "page_name": "sent-emoji-all",
+      "file_path": "/Users/hatae/Documents/company/vrew/packages/web-server/pages/alphaz/station/sent-emoji-all.page.tsx",
+      "type": "webview",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "sent-emoji-all.top-navigation-nav",
+          "component": "TopNavigation",
+          "type": "interactive",
+          "line": 33
+        }
+      ]
+    }
+  ]
+}

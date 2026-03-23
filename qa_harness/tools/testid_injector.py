@@ -70,7 +70,10 @@ WEB_INTERACTIVE_COMPONENTS = {
 
 # Regex to match JSX opening tags (handles multi-line by scanning per-file)
 # Captures: <ComponentName  or <html-tag
+# Uses a negative lookbehind to exclude TypeScript generics like useRef<ScrollView>,
+# Array<Button>, Promise<Response>, etc.
 _JSX_OPEN_RE = re.compile(
+    r"(?<![A-Za-z0-9_.])"  # not preceded by identifier chars (rules out generics)
     r"<\s*([A-Z][A-Za-z0-9]*|[a-z][a-z0-9-]*)"
     r"(?=[\s/>]|$)"
 )
@@ -197,16 +200,39 @@ def _derive_screen_name(file_path: Path, source_type: str) -> str:
         # Try to find "screens" in path
         if "screens" in parts:
             idx = list(parts).index("screens")
-            if idx + 1 < len(parts):
-                screen_dir = parts[idx + 1]
-                # Clean up: GalleryScreen -> gallery
-                clean = screen_dir.lower().replace("screen", "")
-                return f"native.{clean}"
+            remaining = parts[idx + 1:]
+            # Strip "Screen" suffix from file stem for a clean identifier
+            file_stem = re.sub(r'Screen$', '', name)
+            # Convert CamelCase to kebab-case (before lowering)
+            file_stem = re.sub(r'([A-Z])', r'-\1', file_stem).lower().strip('-')
+            file_stem = re.sub(r'-+', '-', file_stem)
+            if len(remaining) > 1:
+                # File is in a subdirectory under screens/
+                # e.g. screens/gallery/GalleryScreen.tsx -> "native.gallery"
+                # e.g. screens/account-setting/AlertReportScreen.tsx -> "native.account-setting.alert-report"
+                screen_dir = remaining[0].lower()
+                if len(remaining) > 2 or screen_dir != file_stem:
+                    # Include file stem for disambiguation when dir has multiple files
+                    return f"native.{screen_dir}.{file_stem}"
+                return f"native.{screen_dir}"
+            elif len(remaining) == 1:
+                # File is directly in screens/ (no subdirectory)
+                return f"native.{file_stem}"
         # Components
         if "components" in parts:
             idx = list(parts).index("components")
-            if idx + 1 < len(parts):
-                return parts[idx + 1].lower()
+            remaining = parts[idx + 1:]
+            if len(remaining) > 1:
+                comp_dir = remaining[0].lower()
+                file_stem = re.sub(r'Screen$', '', name)
+                file_stem = re.sub(r'([A-Z])', r'-\1', file_stem).lower().strip('-')
+                file_stem = re.sub(r'-+', '-', file_stem)
+                if comp_dir != file_stem:
+                    return f"{comp_dir}.{file_stem}"
+                return comp_dir
+            else:
+                clean = name.lower().replace("screen", "")
+                return clean
         return name.lower().replace("screen", "")
 
     elif source_type == "web":
@@ -254,8 +280,8 @@ def _generate_testid(screen_name: str, component_name: str, suffix: str,
         base = re.sub(r'-+', '-', base).strip('-')
 
     # Enforce max length
-    if len(base) > 64:
-        base = base[:64]
+    if len(base) > 96:
+        base = base[:96]
 
     return base
 
@@ -592,7 +618,7 @@ def _apply_injections(plans: list[InjectionPlan]) -> None:
                 old_line = lines[line_idx]
                 # Find the component tag and insert the prop
                 m = re.search(
-                    rf'<\s*{re.escape(plan.component_name)}(?=[\s/>])',
+                    rf'<\s*{re.escape(plan.component_name)}(?=[\s/>]|$)',
                     old_line,
                 )
                 if m:

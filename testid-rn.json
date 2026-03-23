@@ -1,0 +1,3119 @@
+{
+  "version": "2.0",
+  "generated_at": "2026-03-23T05:24:37.479620+00:00",
+  "source_type": "rn",
+  "source_path": "/Users/hatae/Documents/company/alphaz/src",
+  "stats": {
+    "total_pages": 177,
+    "total_testids": 252,
+    "total_interactive": 252,
+    "coverage_pct": 100.0
+  },
+  "pages": [
+    {
+      "page_name": "bottom-sheet.option-bottom-sheet",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/bottom-sheet/OptionBottomSheet.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "bottom-sheet.option-bottom-sheet.alphaz-bottom-sheet-modal",
+          "component": "AlphazBottomSheet",
+          "type": "interactive",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "page_name": "bottom-sheet.stack-bottom-sheet-container",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/bottom-sheet/StackBottomSheetContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "bottom-sheet.stack-bottom-sheet-container.alphaz-bottom-sheet-modal",
+          "component": "AlphazBottomSheet",
+          "type": "interactive",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "page_name": "button.alphaz-button",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/button/AlphazButton.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "button.alphaz-button.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 268
+        }
+      ]
+    },
+    {
+      "page_name": "button.common-button",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/button/CommonButton.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "button.common-button.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 318
+        }
+      ]
+    },
+    {
+      "page_name": "button.common-button-v1",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/button/CommonButtonV1.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "button.common-button-v1.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 432
+        }
+      ]
+    },
+    {
+      "page_name": "button.text-button",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/button/TextButton.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "button.text-button.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "page_name": "cell.alphaz-cell",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/cell/AlphazCell.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "cell.alphaz-cell.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 39
+        },
+        {
+          "id": "cell.alphaz-cell.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "page_name": "cell.switch-cell",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/cell/SwitchCell.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "cell.switch-cell.switch-switch",
+          "component": "Switch",
+          "type": "interactive",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "page_name": "checkbox",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/checkbox/Checkbox.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "checkbox.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "page_name": "crop-modal",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/crop-modal/CropModal.tsx",
+      "type": "native",
+      "total_interactive": 5,
+      "with_testid": 5,
+      "testids": [
+        {
+          "id": "crop-modal.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 189
+        },
+        {
+          "id": "crop-modal.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 197
+        },
+        {
+          "id": "crop-modal.pressable-2-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 214
+        },
+        {
+          "id": "crop-modal.pressable-3-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 226
+        },
+        {
+          "id": "crop-modal.pressable-4-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 241
+        }
+      ]
+    },
+    {
+      "page_name": "cupid-gallery.cupid-gallery-view",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/cupid-gallery/CupidGalleryView.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "cupid-gallery.cupid-gallery-view.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 340
+        },
+        {
+          "id": "cupid-gallery.cupid-gallery-view.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 432
+        },
+        {
+          "id": "cupid-gallery.cupid-gallery-view.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 446
+        }
+      ]
+    },
+    {
+      "page_name": "editor.mbti-container",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/editor/MbtiContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "editor.mbti-container.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "page_name": "editor.singleline-content-editor",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/editor/share/SinglelineContentEditor.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "editor.singleline-content-editor.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "page_name": "gallery.gallery-album-modal",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/gallery/album-modal/GalleryAlbumModal.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "gallery.gallery-album-modal.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "page_name": "gallery.gallery-album-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/gallery/album-modal/share/GalleryAlbumItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "gallery.gallery-album-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "page_name": "gallery.profile-gallery-view",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/gallery/profile-view/ProfileGalleryView.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "gallery.profile-gallery-view.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 424
+        },
+        {
+          "id": "gallery.profile-gallery-view.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 470
+        }
+      ]
+    },
+    {
+      "page_name": "gallery.gallery-selected-asset-list",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/gallery/profile-view/share/GallerySelectedAssetList.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "gallery.gallery-selected-asset-list.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 369
+        },
+        {
+          "id": "gallery.gallery-selected-asset-list.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 375
+        }
+      ]
+    },
+    {
+      "page_name": "gallery.gallery-title",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/gallery/profile-view/share/GalleryTitle.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "gallery.gallery-title.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "page_name": "gallery.tooltip",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/gallery/profile-view/share/Tooltip.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "gallery.tooltip.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "page_name": "join.count-gender-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/join/CountGenderItem.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "join.count-gender-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 27
+        },
+        {
+          "id": "join.count-gender-item.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "page_name": "join.join-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/join/JoinItem.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "join.join-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 66
+        },
+        {
+          "id": "join.join-item.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "page_name": "list.details-list-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/list/DetailsListItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "list.details-list-item.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "page_name": "list.select-detail-reason-list",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/list/SelectDetailReasonList.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "list.select-detail-reason-list.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "page_name": "list.select-reason-list",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/list/SelectReasonList.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "list.select-reason-list.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 20
+        },
+        {
+          "id": "list.select-reason-list.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 36
+        },
+        {
+          "id": "list.select-reason-list.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "page_name": "my-page.my-page-menu-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/my-page/MyPageMenuItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "my-page.my-page-menu-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 88
+        }
+      ]
+    },
+    {
+      "page_name": "navigation.top-tab-bar-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/navigation/top-tab-bar/TopTabBarItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "navigation.top-tab-bar-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "page_name": "notification.internal-notification",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/notification/InternalNotification.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "notification.internal-notification.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 60
+        },
+        {
+          "id": "notification.internal-notification.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "page_name": "onboarding.main-bottom-tab-bar-image-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/onboarding/MainBottomTabBarImageItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "onboarding.main-bottom-tab-bar-image-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "page_name": "onboarding.main-bottom-tab-bar-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/onboarding/MainBottomTabBarItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "onboarding.main-bottom-tab-bar-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "page_name": "popup",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/popup/Popup.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "popup.alphaz-button-btn",
+          "component": "AlphazButton",
+          "type": "interactive",
+          "line": 114
+        },
+        {
+          "id": "popup.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "page_name": "profile.native-profile-card",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/profile/NativeProfileCard.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profile.native-profile-card.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "page_name": "profile.profile-text-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/profile/ProfileTextItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profile.profile-text-item.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "page_name": "profile.tag-group",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/profile/TagGroup.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "profile.tag-group.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 58
+        },
+        {
+          "id": "profile.tag-group.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "page_name": "profile.user-name-group",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/profile/share/UserNameGroup.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "profile.user-name-group.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "page_name": "radio.check-radio-list",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/radio/CheckRadioList.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "radio.check-radio-list.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 93
+        },
+        {
+          "id": "radio.check-radio-list.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "page_name": "radio",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/radio/Radio.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "radio.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "page_name": "radio.radio-list",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/radio/RadioList.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "radio.radio-list.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "page_name": "store.bottom-sheet-product-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/store/BottomSheetProductItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "store.bottom-sheet-product-item.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "page_name": "store.bottom-sheet-products",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/store/BottomSheetProducts.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "store.bottom-sheet-products.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "page_name": "tag-notification",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/tag-notification/TagNotification.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "tag-notification.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "page_name": "text-field.common-text-field",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/components/text-field/CommonTextField.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "text-field.common-text-field.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "page_name": "usebottomsheethandler",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/contexts/bridge/hooks/useBottomSheetHandler.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "usebottomsheethandler.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 501
+        },
+        {
+          "id": "usebottomsheethandler.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 968
+        }
+      ]
+    },
+    {
+      "page_name": "certification-section.certification-images-editor",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/certification-icon/components/certification-section/CertificationImagesEditor.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "certification-section.certification-images-editor.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 119
+        },
+        {
+          "id": "certification-section.certification-images-editor.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "page_name": "meetuphistorycontainer",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/gather-history/meetup/components/MeetupHistoryContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "meetuphistorycontainer.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "page_name": "terms",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/gather-payment/components/Terms.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "terms.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "page_name": "addon",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/laboratory-tab/components/Addon.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "addon.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 40
+        },
+        {
+          "id": "addon.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "page_name": "loungeblockmodal",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge/components/LoungeBlockModal.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungeblockmodal.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "page_name": "loungecreatebutton",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge/components/LoungeCreateButton.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungecreatebutton.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "page_name": "loungelistcontainer",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge/components/LoungeListContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungelistcontainer.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 149
+        }
+      ]
+    },
+    {
+      "page_name": "loungelistheader",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge/components/LoungeListHeader.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "loungelistheader.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 55
+        },
+        {
+          "id": "loungelistheader.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 56
+        },
+        {
+          "id": "loungelistheader.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "page_name": "loungeonboardingmodal",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge/components/LoungeOnboardingModal.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungeonboardingmodal.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "page_name": "loungewarningcontainer",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge/components/LoungeWarningContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungewarningcontainer.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "page_name": "share.lounge-badge",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge/components/share/LoungeBadge.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "share.lounge-badge.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "page_name": "loungecommentitem",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge-detail/components/LoungeCommentItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungecommentitem.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "page_name": "loungecommentitemcaption",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge-detail/components/LoungeCommentItemCaption.tsx",
+      "type": "native",
+      "total_interactive": 4,
+      "with_testid": 4,
+      "testids": [
+        {
+          "id": "loungecommentitemcaption.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 97
+        },
+        {
+          "id": "loungecommentitemcaption.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 123
+        },
+        {
+          "id": "loungecommentitemcaption.touchable-opacity-2-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 144
+        },
+        {
+          "id": "loungecommentitemcaption.touchable-opacity-3-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 166
+        }
+      ]
+    },
+    {
+      "page_name": "loungedetailcontent",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge-detail/components/LoungeDetailContent.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungedetailcontent.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "page_name": "loungedetailprofile",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/lounge-detail/components/LoungeDetailProfile.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "loungedetailprofile.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "page_name": "meetupapplyfieldcontainer",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/meetup/components/MeetupApplyFieldContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "meetupapplyfieldcontainer.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "page_name": "meetuppersonalitycontainer",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/meetup/components/MeetupPersonalityContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "meetuppersonalitycontainer.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 305
+        }
+      ]
+    },
+    {
+      "page_name": "share.activity-field-tag-group",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/meetup/components/share/ActivityFieldTagGroup.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "share.activity-field-tag-group.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "page_name": "share.menu-board",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/meetup-onboarding/components/share/MenuBoard.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "share.menu-board.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "page_name": "mypageprofile",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/my-page/components/MyPageProfile.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "mypageprofile.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "page_name": "userprofilecard",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/profile-card/components/UserProfileCard.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "userprofilecard.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 295
+        }
+      ]
+    },
+    {
+      "page_name": "share.information-section",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/profile-card/components/share/InformationSection.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "share.information-section.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 200
+        }
+      ]
+    },
+    {
+      "page_name": "share.relation-section",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/profile-card/components/share/RelationSection.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "share.relation-section.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 126
+        }
+      ]
+    },
+    {
+      "page_name": "mbticontainer",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/profile-edit/components/MbtiContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "mbticontainer.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "page_name": "share.profile-edit-content-editor",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/profile-edit/components/share/ProfileEditContentEditor.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "share.profile-edit-content-editor.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "page_name": "share.rating-button",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/rating/components/share/RatingButton.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "share.rating-button.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "page_name": "inactivecard",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/recommendation/components/InactiveCard.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "inactivecard.button-btn",
+          "component": "Button",
+          "type": "interactive",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "page_name": "one-column.one-column-container",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/recommendation/components/one-column/OneColumnContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "one-column.one-column-container.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 223
+        }
+      ]
+    },
+    {
+      "page_name": "one-column.one-column-skeleton-container",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/recommendation/components/one-column/OneColumnSkeletonContainer.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "one-column.one-column-skeleton-container.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "page_name": "recommendationprofilecard",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/recommendation-profile-card/components/RecommendationProfileCard.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "recommendationprofilecard.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "page_name": "versionsection",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/setting/components/VersionSection.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "versionsection.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "page_name": "basestationcard",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/station/components/BaseStationCard.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "basestationcard.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "page_name": "usesendlikev1",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/features/station/hooks/useSendLikeV1.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "usesendlikev1.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 427
+        }
+      ]
+    },
+    {
+      "page_name": "laboratorytabbaritem",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/navigations/main-bottom-tab/LaboratoryTabBarItem.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "laboratorytabbaritem.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 88
+        },
+        {
+          "id": "laboratorytabbaritem.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "page_name": "mainbottomtabbarimageitem",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/navigations/main-bottom-tab/MainBottomTabBarImageItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "mainbottomtabbarimageitem.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "page_name": "mainbottomtabbaritem",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/navigations/main-bottom-tab/MainBottomTabBarItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "mainbottomtabbaritem.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "page_name": "native.sign-up-blocking-friend",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/SignUpBlockingFriendScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.sign-up-blocking-friend.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 206
+        }
+      ]
+    },
+    {
+      "page_name": "native.account-setting",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/account-setting/AccountSettingScreen.tsx",
+      "type": "native",
+      "total_interactive": 5,
+      "with_testid": 5,
+      "testids": [
+        {
+          "id": "native.account-setting.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 122
+        },
+        {
+          "id": "native.account-setting.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 128
+        },
+        {
+          "id": "native.account-setting.pressable-1-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 146
+        },
+        {
+          "id": "native.account-setting.pressable-2-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 164
+        },
+        {
+          "id": "native.account-setting.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 175
+        }
+      ]
+    },
+    {
+      "page_name": "native.account-setting.alert-report",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/account-setting/AlertReportScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.account-setting.alert-report.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 88
+        }
+      ]
+    },
+    {
+      "page_name": "native.account-setting.suspended-account-delete",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/account-setting/SuspendedAccountDeleteScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.account-setting.suspended-account-delete.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "page_name": "native.account-setting.suspended",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/account-setting/SuspendedScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.account-setting.suspended.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "page_name": "native.alpha-key",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/alpha-key/AlphaKeyScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.alpha-key.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "page_name": "native.announcement",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/announcement/AnnouncementScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.announcement.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "page_name": "native.certification-icon.certification-icon-create",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/certification-icon/CertificationIconCreateScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.certification-icon.certification-icon-create.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "page_name": "native.certification-icon.certification-icon-guide",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/certification-icon/CertificationIconGuideScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.certification-icon.certification-icon-guide.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "page_name": "native.certification-icon.certification-icon-list",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/certification-icon/CertificationIconListScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.certification-icon.certification-icon-list.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 195
+        }
+      ]
+    },
+    {
+      "page_name": "native.certification-icon.certification-icon-reason",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/certification-icon/CertificationIconReasonScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.certification-icon.certification-icon-reason.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 206
+        }
+      ]
+    },
+    {
+      "page_name": "native.chat-tab.chat-room",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/chat-tab/ChatRoomScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.chat-tab.chat-room.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "page_name": "native.chat-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/chat-tab/ChatTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.chat-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "page_name": "native.gather-history.party-history",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/gather-history/PartyHistoryScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.gather-history.party-history.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "page_name": "native.gather-payment",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/gather-payment/GatherPaymentScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.gather-payment.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 414
+        }
+      ]
+    },
+    {
+      "page_name": "native.gather-tab.gathering-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/gather-tab/GatheringTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.gather-tab.gathering-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "page_name": "native.home-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/home-tab/HomeTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.home-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "page_name": "native.intro",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/intro/IntroScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.intro.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "page_name": "native.laboratory-tab.addon",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/laboratory-tab/AddonScreen.tsx",
+      "type": "native",
+      "total_interactive": 5,
+      "with_testid": 5,
+      "testids": [
+        {
+          "id": "native.laboratory-tab.addon.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 170
+        },
+        {
+          "id": "native.laboratory-tab.addon.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 176
+        },
+        {
+          "id": "native.laboratory-tab.addon.text-input-1-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 186
+        },
+        {
+          "id": "native.laboratory-tab.addon.text-input-2-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 206
+        },
+        {
+          "id": "native.laboratory-tab.addon.text-input-3-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 214
+        }
+      ]
+    },
+    {
+      "page_name": "native.laboratory-tab.lab-interaction",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/laboratory-tab/LabInteractionScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.laboratory-tab.lab-interaction.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "page_name": "native.laboratory-tab.storage-debug",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/laboratory-tab/StorageDebugScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.laboratory-tab.storage-debug.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 121
+        },
+        {
+          "id": "native.laboratory-tab.storage-debug.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 135
+        }
+      ]
+    },
+    {
+      "page_name": "native.liveness.liveness-progressing",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/liveness/LivenessProgressingScreen.tsx",
+      "type": "native",
+      "total_interactive": 6,
+      "with_testid": 6,
+      "testids": [
+        {
+          "id": "native.liveness.liveness-progressing.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 254
+        },
+        {
+          "id": "native.liveness.liveness-progressing.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 327
+        },
+        {
+          "id": "native.liveness.liveness-progressing.touchable-opacity-2-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 349
+        },
+        {
+          "id": "native.liveness.liveness-progressing.touchable-opacity-3-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 360
+        },
+        {
+          "id": "native.liveness.liveness-progressing.touchable-opacity-4-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 380
+        },
+        {
+          "id": "native.liveness.liveness-progressing.touchable-opacity-5-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 403
+        }
+      ]
+    },
+    {
+      "page_name": "native.liveness",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/liveness/LivenessScreen.tsx",
+      "type": "native",
+      "total_interactive": 6,
+      "with_testid": 6,
+      "testids": [
+        {
+          "id": "native.liveness.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 262
+        },
+        {
+          "id": "native.liveness.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 311
+        },
+        {
+          "id": "native.liveness.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 343
+        },
+        {
+          "id": "native.liveness.touchable-opacity-2-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 351
+        },
+        {
+          "id": "native.liveness.alphaz-bottom-sheet-modal",
+          "component": "AlphazBottomSheet",
+          "type": "interactive",
+          "line": 363
+        },
+        {
+          "id": "native.liveness.alphaz-bottom-sheet-1-modal",
+          "component": "AlphazBottomSheet",
+          "type": "interactive",
+          "line": 414
+        }
+      ]
+    },
+    {
+      "page_name": "native.liveness.liveness-web-view",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/liveness/LivenessWebViewScreen.tsx",
+      "type": "native",
+      "total_interactive": 4,
+      "with_testid": 4,
+      "testids": [
+        {
+          "id": "native.liveness.liveness-web-view.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 146
+        },
+        {
+          "id": "native.liveness.liveness-web-view.alphaz-bottom-sheet-modal",
+          "component": "AlphazBottomSheet",
+          "type": "interactive",
+          "line": 253
+        },
+        {
+          "id": "native.liveness.liveness-web-view.alphaz-bottom-sheet-1-modal",
+          "component": "AlphazBottomSheet",
+          "type": "interactive",
+          "line": 298
+        },
+        {
+          "id": "native.liveness.liveness-web-view.alphaz-bottom-sheet-2-modal",
+          "component": "AlphazBottomSheet",
+          "type": "interactive",
+          "line": 312
+        }
+      ]
+    },
+    {
+      "page_name": "native.login",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/login/LoginScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.login.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 39
+        },
+        {
+          "id": "native.login.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/LoungeItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-activity",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/active/LoungeActivityScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-activity.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 80
+        },
+        {
+          "id": "native.lounge.lounge-activity.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-activity-list",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/active/components/LoungeActivityList.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-activity-list.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-connection-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/active/components/LoungeConnectionItem.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-connection-item.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 139
+        },
+        {
+          "id": "native.lounge.lounge-connection-item.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-notification-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/active/components/LoungeNotificationItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-notification-item.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-received-like-item",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/active/components/LoungeReceivedLikeItem.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-received-like-item.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 123
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-skeleton-area",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/active/components/LoungeSkeletonArea.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-skeleton-area.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-badge-verification",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/badge-verification/LoungeBadgeVerificationScreen.tsx",
+      "type": "native",
+      "total_interactive": 4,
+      "with_testid": 4,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-badge-verification.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 46
+        },
+        {
+          "id": "native.lounge.lounge-badge-verification.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 75
+        },
+        {
+          "id": "native.lounge.lounge-badge-verification.touchable-opacity-2-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 288
+        },
+        {
+          "id": "native.lounge.lounge-badge-verification.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-badge-fail",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/badge-verification-fail/LoungeBadgeFailScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-badge-fail.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-badge-pending",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/badge-verification-pending/LoungeBadgePendingScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-badge-pending.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-text-input",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/components/LoungeTextInput.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-text-input.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 119
+        },
+        {
+          "id": "native.lounge.lounge-text-input.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-connection",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/connection/LoungeConnectionScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-connection.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-create",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/create/LoungeCreateScreen.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-create.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 155
+        },
+        {
+          "id": "native.lounge.lounge-create.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 159
+        },
+        {
+          "id": "native.lounge.lounge-create.touchable-opacity-2-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 177
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-detail",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/detail/LoungeDetailScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-detail.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 286
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-instagram-badge",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/instagram-badge/LoungeInstagramBadgeScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-instagram-badge.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 123
+        },
+        {
+          "id": "native.lounge.lounge-instagram-badge.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "page_name": "native.lounge.lounge-send-like",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/lounge/send-like/LoungeSendLikeScreen.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "native.lounge.lounge-send-like.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 65
+        },
+        {
+          "id": "native.lounge.lounge-send-like.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 77
+        },
+        {
+          "id": "native.lounge.lounge-send-like.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "page_name": "native.meetup.meetup-apply",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/meetup/MeetupApplyScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.meetup.meetup-apply.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 344
+        }
+      ]
+    },
+    {
+      "page_name": "native.meetup.meetup-notification",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/meetup/MeetupNotificationScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.meetup.meetup-notification.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "page_name": "native.member-approve.instagram-fail",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/member-approve/InstagramFailScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.member-approve.instagram-fail.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "page_name": "native.member-approve.instagram-verification",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/member-approve/InstagramVerificationScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.member-approve.instagram-verification.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "page_name": "native.member-approve",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/member-approve/MemberApproveScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.member-approve.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "page_name": "native.member-pending.instagram-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/member-pending/InstagramEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.member-pending.instagram-edit.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "page_name": "native.member-pending.instagram-reconnect",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/member-pending/InstagramReconnectScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.member-pending.instagram-reconnect.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "page_name": "native.member-pending",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/member-pending/MemberPendingScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.member-pending.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "page_name": "native.member-pending.user-memo-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/member-pending/UserMemoEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.member-pending.user-memo-edit.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "page_name": "native.my-page-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/my-page-tab/MyPageTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.my-page-tab.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 76
+        },
+        {
+          "id": "native.my-page-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "page_name": "native.onboarding.onboarding-received-interest",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/onboarding/OnboardingReceivedInterestScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.onboarding.onboarding-received-interest.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "page_name": "native.onboarding.onboarding-send-interest",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/onboarding/OnboardingSendInterestScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.onboarding.onboarding-send-interest.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 163
+        }
+      ]
+    },
+    {
+      "page_name": "native.place-detail",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/place-detail/PlaceDetailScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.place-detail.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "page_name": "native.privacy-guide",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/privacy-guide/PrivacyGuideScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.privacy-guide.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile.profile-tag",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile/ProfileTagScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile.profile-tag.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile.introduction-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile/edit/IntroductionEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "native.profile.introduction-edit.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 45
+        },
+        {
+          "id": "native.profile.introduction-edit.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 54
+        },
+        {
+          "id": "native.profile.introduction-edit.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile.prompt-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile/edit/PromptEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile.prompt-edit.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 216
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile.tag-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile/edit/TagEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile.tag-edit.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 278
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile.edit-profile-image",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile/image/EditProfileImageScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.profile.edit-profile-image.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 53
+        },
+        {
+          "id": "native.profile.edit-profile-image.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile.liveness-edit-profile-image",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile/image/LivenessEditProfileImageScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.profile.liveness-edit-profile-image.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 34
+        },
+        {
+          "id": "native.profile.liveness-edit-profile-image.touchable-opacity-1-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-card.my-page-profile-card",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-card/MyPageProfileCardScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-card.my-page-profile-card.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 187
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-card",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-card/ProfileCardScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-card.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.badge-verification-create",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/BadgeVerificationCreateScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.badge-verification-create.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.liveness-profile-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/LivenessProfileEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.liveness-profile-edit.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 144
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.my-page-introduction-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/MyPageIntroductionEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.my-page-introduction-edit.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.my-page-nickname-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/MyPageNicknameEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.my-page-nickname-edit.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.my-page-profile-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/MyPageProfileEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.my-page-profile-edit.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.my-page-profile-edit-simple",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/MyPageProfileEditSimpleScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.my-page-profile-edit-simple.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.my-page-profile-edit-web-view",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/MyPageProfileEditWebViewScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.my-page-profile-edit-web-view.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.nickname-edit",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/NicknameEditScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-edit.nickname-edit.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 283
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-edit.profile-edit-web-view",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-edit/ProfileEditWebViewScreen.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "native.profile-edit.profile-edit-web-view.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 97
+        },
+        {
+          "id": "native.profile-edit.profile-edit-web-view.touchable-opacity-btn",
+          "component": "TouchableOpacity",
+          "type": "interactive",
+          "line": 150
+        },
+        {
+          "id": "native.profile-edit.profile-edit-web-view.common-web-view-1-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 162
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-insert.additional-profile-insert",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-insert/AdditionalProfileInsertScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-insert.additional-profile-insert.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-insert.instagram-profile-insert",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-insert/InstagramProfileInsertScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-insert.instagram-profile-insert.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-insert",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-insert/ProfileInsertScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.profile-insert.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 95
+        },
+        {
+          "id": "native.profile-insert.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "page_name": "native.profile-insert.profile-preview",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/profile-insert/ProfilePreviewScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.profile-insert.profile-preview.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "page_name": "native.recommendation-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/recommendation-tab/RecommendationTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.recommendation-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "page_name": "native.referral.referral-inquire-induce",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/referral/ReferralInquireInduceScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.referral.referral-inquire-induce.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "page_name": "native.referral.referral-inquire",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/referral/ReferralInquireScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.referral.referral-inquire.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "page_name": "native.referral-code-invite",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/referral-code-invite/ReferralCodeInviteScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.referral-code-invite.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 179
+        },
+        {
+          "id": "native.referral-code-invite.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 223
+        }
+      ]
+    },
+    {
+      "page_name": "native.referral-requested",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/referral-requested/ReferralRequestedScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.referral-requested.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "page_name": "native.setting.notification-setting",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/setting/NotificationSettingScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.setting.notification-setting.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "page_name": "native.setting",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/setting/SettingScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.setting.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "page_name": "native.sign-up.certification-icon-sign-up",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/sign-up/CertificationIconSignUpScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.sign-up.certification-icon-sign-up.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 271
+        }
+      ]
+    },
+    {
+      "page_name": "native.sign-up.referral-received",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/sign-up/ReferralReceivedScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.sign-up.referral-received.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "page_name": "native.sign-up.signup",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/sign-up/SignupScreen.tsx",
+      "type": "native",
+      "total_interactive": 3,
+      "with_testid": 3,
+      "testids": [
+        {
+          "id": "native.sign-up.signup.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 61
+        },
+        {
+          "id": "native.sign-up.signup.text-input-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 71
+        },
+        {
+          "id": "native.sign-up.signup.text-input-1-input",
+          "component": "TextInput",
+          "type": "interactive",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "page_name": "native.statioin.received-interest",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/statioin/ReceivedInterestScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.statioin.received-interest.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 312
+        },
+        {
+          "id": "native.statioin.received-interest.scroll-view-1-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 338
+        }
+      ]
+    },
+    {
+      "page_name": "native.statioin.sent-interest",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/statioin/SentInterestScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.statioin.sent-interest.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 302
+        },
+        {
+          "id": "native.statioin.sent-interest.scroll-view-1-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 328
+        }
+      ]
+    },
+    {
+      "page_name": "native.statioin.station-rating-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/statioin/StationRatingTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.statioin.station-rating-tab.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 436
+        },
+        {
+          "id": "native.statioin.station-rating-tab.scroll-view-1-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 463
+        }
+      ]
+    },
+    {
+      "page_name": "native.statioin.station-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/statioin/StationTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.statioin.station-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "page_name": "native.statioin.station-received-emoji-all",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/statioin/screens/StationReceivedEmojiAllScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.statioin.station-received-emoji-all.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "page_name": "native.statioin.station-received-like-all",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/statioin/screens/StationReceivedLikeAllScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.statioin.station-received-like-all.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "page_name": "native.statioin.station-sent-emoji-all",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/statioin/screens/StationSentEmojiAllScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.statioin.station-sent-emoji-all.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "page_name": "native.station-connected-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/station-connected-tab/StationConnectedTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.station-connected-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "page_name": "native.station-requested-tab",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/station-requested-tab/StationRequestedTabScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.station-requested-tab.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "page_name": "native.store.store-expiring-balance",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/store/StoreExpiringBalanceScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.store.store-expiring-balance.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 88
+        }
+      ]
+    },
+    {
+      "page_name": "native.store.store-history",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/store/StoreHistoryScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.store.store-history.flat-list-list",
+          "component": "FlatList",
+          "type": "interactive",
+          "line": 241
+        }
+      ]
+    },
+    {
+      "page_name": "native.store",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/store/StoreScreen.tsx",
+      "type": "native",
+      "total_interactive": 2,
+      "with_testid": 2,
+      "testids": [
+        {
+          "id": "native.store.scroll-view-list",
+          "component": "ScrollView",
+          "type": "interactive",
+          "line": 126
+        },
+        {
+          "id": "native.store.pressable-btn",
+          "component": "Pressable",
+          "type": "interactive",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "page_name": "native.success",
+      "file_path": "/Users/hatae/Documents/company/alphaz/src/screens/success/SuccessScreen.tsx",
+      "type": "native",
+      "total_interactive": 1,
+      "with_testid": 1,
+      "testids": [
+        {
+          "id": "native.success.common-web-view-webview",
+          "component": "CommonWebView",
+          "type": "interactive",
+          "line": 15
+        }
+      ]
+    }
+  ]
+}
