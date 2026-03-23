@@ -151,9 +151,11 @@ def _build_slot_values(
     # profile-input: fill profile-specific slots
     if strategy == "profile-input":
         cat = f"{tc.category.middle} {tc.category.minor}".strip()
-        slots.setdefault("profile_field_selector", cat.replace(" ", "_").lower())
-        slots.setdefault("input_selector", f"#{cat.replace(' ', '-').lower()}-input")
-        slots.setdefault("input_value", "테스트")
+        safe_cat = re.sub(r'[^a-zA-Z0-9가-힣_]', '_', cat).lower()
+        slots.setdefault("profile_field_selector", safe_cat)
+        slots.setdefault("input_selector", f"#{safe_cat}-input")
+        # Korean text must not contain YAML-breaking chars
+        slots.setdefault("input_value", "test_input")
         slots.setdefault("next_button", "next-btn")
         slots.setdefault("expected_result_element", "profile-complete")
 
@@ -343,13 +345,13 @@ def generate_yaml_flows(
             continue
 
         # Jinja2 uses {{ var }} by default which matches our slot syntax
-        # Ensure all slot values are YAML-safe (quote special chars)
+        # Sanitize slot values: strip newlines, remove YAML-breaking chars
         safe_slots = {}
         for k, v in slots.items():
-            if isinstance(v, str) and any(c in v for c in ':{}[]&*?|>!%@`'):
-                safe_slots[k] = v  # already quoted in template
-            else:
-                safe_slots[k] = v
+            if isinstance(v, str):
+                # Remove newlines (breaks YAML indentation)
+                v = v.replace('\n', ' ').replace('\r', ' ').strip()
+            safe_slots[k] = v
         filled_content = template.render(**safe_slots)
 
         flow = _generate_flow(tc, template_id, filled_content, catalog)
