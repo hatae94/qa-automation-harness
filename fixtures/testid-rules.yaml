@@ -1,0 +1,115 @@
+# testID injection rules v2
+# Used by: qa-harness testid inject --rules <this-file>
+version: "2.0"
+
+naming:
+  format: "{screen}.{section}.{element}-{action}"
+  charset: "[a-z0-9._-]"
+  max_length: 64
+  hierarchy_separator: "."
+  type_separator: "-"
+  native_prefix: "native"
+  webview_prefix: "webview"
+
+rn:
+  target_components:
+    - TouchableOpacity
+    - Pressable
+    - TextInput
+    - Button
+    - Switch
+    - ScrollView
+    - FlatList
+    - AlphazButton
+    - AlphazBottomSheet
+    - CommonWebView
+  skip_if_has: ["testID"]
+  screen_detection: "filepath"  # derive screen name from file path
+
+web:
+  target_elements:
+    - button
+    - input
+    - a
+    - select
+    - textarea
+    - form
+  target_components:
+    - Button
+    - TextField
+    - Input
+    - Link
+    - Select
+    - PhoneTextInput
+    - PinTextFeild
+    - TextInput
+    - TopNavigation
+    - SearchBar
+    - CheckBox
+    - Radio
+    - BottomSheet
+    - AlphazBottomSheet
+    - ErrorMessage
+    - ClearCloseButton
+  skip_if_has: ["data-testid", "data-test-id"]
+  screen_detection: "filepath"  # pages/alphaz/login -> "login"
+
+inject_targets:
+  interactive:  # Level 1 -- required
+    - { component: "Button", suffix: "-btn" }
+    - { component: "PhoneTextInput", suffix: "-input" }
+    - { component: "PinTextFeild", suffix: "-input" }
+    - { component: "TextInput", suffix: "-input" }
+    - { component: "input", suffix: "-input" }
+    - { component: "button", suffix: "-btn" }
+    - { component: "a", suffix: "-link" }
+    - { component: "Pressable", suffix: "-btn" }
+    - { component: "TouchableOpacity", suffix: "-btn" }
+    - { component: "CheckBox", suffix: "-checkbox" }
+    - { component: "Radio", suffix: "-radio" }
+    - { component: "Switch", suffix: "-switch" }
+    - { component: "SearchBar", suffix: "-input" }
+    - { component: "ClearCloseButton", suffix: "-btn" }
+
+  container:  # Level 2 -- recommended
+    - { component: "TopNavigation", suffix: "-nav" }
+    - { component: "BottomSheet", suffix: "-modal" }
+    - { component: "AlphazBottomSheet", suffix: "-modal" }
+    - { component: "section", suffix: "-section" }
+    - { component: "form", suffix: "-form" }
+
+  verification:  # Level 3 -- optional
+    - { component: "Typography", suffix: "-text", condition: "error|title|status" }
+    - { component: "ErrorMessage", suffix: "-text" }
+
+exclude:
+  components:
+    - "styled.*"
+    - "Fragment"
+    - "React.Fragment"
+    - "View"
+    - "div"
+    - "span"
+  paths:
+    - "**/node_modules/**"
+    - "**/*.test.tsx"
+    - "**/*.stories.tsx"
+    - "**/*.d.ts"
+
+page_mapping:
+  web:
+    "pages/{brand}/*.page.tsx": "{filename}"
+    "pages/{brand}/*/index.page.tsx": "{dirname}"
+    "pages/{brand}/*/*.page.tsx": "{dirname}.{filename}"
+  native:
+    "screens/*/": "native.{dirname}"
+
+validation:
+  require_page_prefix: true
+  uniqueness: "per_page"
+  forbid_generic:
+    - "button-1"
+    - "input-1"
+    - "container"
+    - "wrapper"
+    - "component"

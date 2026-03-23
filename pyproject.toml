@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qa-automation-harness"
-version = "0.2.0"
+version = "0.14.0"
 description = "Deterministic QA test generation and execution harness for hybrid mobile apps"
 requires-python = ">=3.11"
 dependencies = [

@@ -464,5 +464,116 @@ def full_pipeline(ctx: click.Context, input_path: Path, device_id: str, dry_run:
     click.echo("\n=== Pipeline Complete ===")
 
 
+# ---------------------------------------------------------------------------
+# testid: testID injection, audit, export, diff
+# ---------------------------------------------------------------------------
+
+@main.group("testid")
+def testid() -> None:
+    """Manage testID injection, auditing, and export for RN and WebView components."""
+
+
+@testid.command("audit")
+@click.option("--source", required=True, type=click.Path(exists=True, path_type=Path),
+              help="Path to source directory (RN src/ or web pages/ dir)")
+@click.option("--type", "source_type", required=True, type=click.Choice(["rn", "web"]),
+              help="Source type: rn (React Native) or web (WebView)")
+@click.option("--format", "output_format", default="table", type=click.Choice(["table", "json"]),
+              help="Output format")
+def testid_audit(source: Path, source_type: str, output_format: str) -> None:
+    """Audit testID coverage for interactive components."""
+    from qa_harness.tools.testid_injector import audit as do_audit
+    from qa_harness.tools.testid_injector import print_audit_report
+
+    report = do_audit(source, source_type)
+    if output_format == "json":
+        import json as _json
+        data = {
+            "source_type": report.source_type,
+            "source_path": report.source_path,
+            "total_interactive": report.total_interactive,
+            "total_with_testid": report.total_with_testid,
+            "total_without_testid": report.total_without_testid,
+            "coverage_pct": report.coverage_pct,
+            "files": [
+                {
+                    "file_path": f.file_path,
+                    "screen_name": f.screen_name,
+                    "total_interactive": f.total_interactive,
+                    "with_testid": f.with_testid,
+                    "without_testid": f.without_testid,
+                    "coverage_pct": f.coverage_pct,
+                }
+                for f in report.files
+            ],
+        }
+        click.echo(_json.dumps(data, indent=2, ensure_ascii=False))
+    else:
+        print_audit_report(report)
+
+
+@testid.command("inject")
+@click.option("--source", required=True, type=click.Path(exists=True, path_type=Path),
+              help="Path to source directory")
+@click.option("--type", "source_type", required=True, type=click.Choice(["rn", "web"]),
+              help="Source type: rn or web")
+@click.option("--rules", "rules_path", default=None, type=click.Path(path_type=Path),
+              help="Path to testid-rules.yaml")
+@click.option("--dry-run", is_flag=True, default=True, help="Only show plan, do not modify files")
+@click.option("--apply", is_flag=True, default=False, help="Actually modify source files")
+def testid_inject(source: Path, source_type: str, rules_path: Path | None,
+                  dry_run: bool, apply: bool) -> None:
+    """Inject testIDs into interactive components."""
+    from qa_harness.tools.testid_injector import inject as do_inject
+    from qa_harness.tools.testid_injector import print_injection_plan
+
+    is_dry_run = not apply
+    plans = do_inject(source, source_type, rules_path, dry_run=is_dry_run)
+    if is_dry_run:
+        print_injection_plan(plans, source_type)
+        if plans:
+            click.echo(f"  Run with --apply to modify {len(plans)} files.\n")
+    else:
+        click.echo(f"\n  Applied {len(plans)} testID injections.\n")
+        print_injection_plan(plans, source_type)
+
+
+@testid.command("export")
+@click.option("--source", required=True, type=click.Path(exists=True, path_type=Path),
+              help="Path to source directory")
+@click.option("--type", "source_type", required=True, type=click.Choice(["rn", "web"]),
+              help="Source type: rn or web")
+@click.option("--output", "output_path", default=None, type=click.Path(path_type=Path),
+              help="Output JSON file path")
+def testid_export(source: Path, source_type: str, output_path: Path | None) -> None:
+    """Export all testIDs as a JSON manifest for the knowledge base."""
+    import json as _json
+
+    from qa_harness.tools.testid_injector import export_testids
+
+    manifest = export_testids(source, source_type)
+    output_str = _json.dumps(manifest, indent=2, ensure_ascii=False)
+    if output_path:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(output_str, encoding="utf-8")
+        click.echo(f"  Exported manifest to {output_path}")
+    else:
+        click.echo(output_str)
+
+
+@testid.command("diff")
+@click.option("--source", required=True, type=click.Path(exists=True, path_type=Path),
+              help="Path to source directory")
+@click.option("--type", "source_type", required=True, type=click.Choice(["rn", "web"]),
+              help="Source type: rn or web")
+def testid_diff(source: Path, source_type: str) -> None:
+    """Show what testID changes would be made (same as inject --dry-run)."""
+    from qa_harness.tools.testid_injector import diff as do_diff
+    from qa_harness.tools.testid_injector import print_injection_plan
+
+    plans = do_diff(source, source_type)
+    print_injection_plan(plans, source_type)
+
+
 if __name__ == "__main__":
     main()
