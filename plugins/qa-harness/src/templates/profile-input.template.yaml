@@ -6,12 +6,13 @@ appId: com.cupist.alpha
 - tapOn:
     id: "{{profile_field_selector}}"
 - runScript:
-    file: "scripts/cdp_input.js"
+    file: "scripts/input_text_remote.js"
     env:
-      SELECTOR: "{{input_selector}}"
-      VALUE: "{{input_value}}"
+      TAP_SELECTOR: "{{input_selector}}"
+      TEXT: "{{input_value}}"
       DEVICE: "{{deviceId}}"
-      PORT: "{{cdpPort}}"
+      APP_ID: "{{appId}}"
+      INPUT_SERVER: "{{inputServer}}"
 - tapOn:
     id: "{{next_button}}"
 - assertVisible:

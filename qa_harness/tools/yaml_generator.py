@@ -102,7 +102,8 @@ _DEFAULT_TEST_DATA: dict[str, str] = {
     "phoneNumber": "01077322441",
     "otpCode": "123456",
     "deviceId": "emulator-5554",
-    "cdpPort": "5100",
+    "inputServer": "http://localhost:5100",
+    "appId": "com.alphaz.app",
     "permissionAction": "allow",
     "permissionType": "notification",
 }
@@ -237,7 +238,7 @@ def _generate_flow(
         logger.warning("[yaml-gen] %s: %s", tc.id, exc)
 
     uses_cdp = "runScript" in filled_content and "tap_remote" in filled_content
-    uses_korean = "cdp_input" in filled_content or "adb_korean_input" in filled_content
+    uses_korean = "input_text_remote" in filled_content or "adb_korean_input" in filled_content
 
     meta = MaestroFlowMetadata(
         covers_tc_ids=[tc.id],

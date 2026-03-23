@@ -1,11 +1,12 @@
 # Korean Input (WebView Renderer) Template
-# Uses nativeValueSetter + dispatchEvent to trigger React onChange.
+# Uses Flask input server + CDP atomic (find + focus + setValue) for text input.
 #
 # Slots:
 #   {{ cdpSelector }} - source: catalog  - CSS selector for the WebView element
 #   {{ inputText }}   - source: testdata - Text to input (Korean or any)
 #   {{ deviceId }}    - source: computed  - Target device identifier
-#   {{ cdpPort }}     - source: computed  - CDP bridge port (default: 5100)
+#   {{ inputServer }} - source: computed  - Flask input server URL (default: http://localhost:5100)
+#   {{ appId }}       - source: computed  - App package name (default: com.alphaz.app)
 
 tags:
   - korean-input
@@ -15,13 +16,13 @@ tags:
 ---
 # Step 1: Input text via CDP nativeValueSetter (single evaluate call)
 - runScript:
-    file: "scripts/cdp_input.js"
+    file: "scripts/input_text_remote.js"
     env:
-      SELECTOR: "{{ cdpSelector }}"
-      VALUE: "{{ inputText }}"
+      TAP_SELECTOR: "{{ cdpSelector }}"
+      TEXT: "{{ inputText }}"
       DEVICE: "{{ deviceId }}"
-      PORT: "{{ cdpPort }}"
-      METHOD: "nativeValueSetter"
+      APP_ID: "{{ appId }}"
+      INPUT_SERVER: "{{ inputServer }}"
     label: "Korean WebView input via nativeValueSetter"
 
 # Step 2: Brief wait for React state update

@@ -6,7 +6,8 @@
 #   {{ phoneNumber }} - source: testdata - User phone number (digits only)
 #   {{ otpCode }}     - source: testdata - OTP verification code
 #   {{ deviceId }}    - source: computed  - Target device identifier
-#   {{ cdpPort }}     - source: computed  - CDP bridge port (default: 5100)
+#   {{ inputServer }} - source: computed  - Flask input server URL (default: http://localhost:5100)
+#   {{ appId }}       - source: computed  - App package name (default: com.alphaz.app)
 #
 # M5 fix: sub-flow file references now use proper relative paths.
 
@@ -37,9 +38,10 @@ tags:
 - runScript:
     file: "scripts/tap_remote.js"
     env:
-      SELECTOR: "[data-testid='intro-v2.click-signup-btn']"
+      TAP_SELECTOR: "[data-testid='intro-v2.click-signup-btn']"
       DEVICE: "{{ deviceId }}"
-      PORT: "{{ cdpPort }}"
+      APP_ID: "{{ appId }}"
+      INPUT_SERVER: "{{ inputServer }}"
     label: "Tap signup button"
 
 # Step 5: Wait for onboarding screen
@@ -52,9 +54,10 @@ tags:
 - runScript:
     file: "scripts/tap_remote.js"
     env:
-      SELECTOR: "[data-testid='onboarding.confirm-btn']"
+      TAP_SELECTOR: "[data-testid='onboarding.confirm-btn']"
       DEVICE: "{{ deviceId }}"
-      PORT: "{{ cdpPort }}"
+      APP_ID: "{{ appId }}"
+      INPUT_SERVER: "{{ inputServer }}"
     label: "Confirm onboarding"
 
 # Step 7: Wait for phone input screen
@@ -65,12 +68,13 @@ tags:
 
 # Step 8: Input phone number via CDP
 - runScript:
-    file: "scripts/cdp_input.js"
+    file: "scripts/input_text_remote.js"
     env:
-      SELECTOR: "[data-testid='phone-input.phone-field'] input"
-      VALUE: "{{ phoneNumber }}"
+      TAP_SELECTOR: "[data-testid='phone-input.phone-field'] input"
+      TEXT: "{{ phoneNumber }}"
       DEVICE: "{{ deviceId }}"
-      PORT: "{{ cdpPort }}"
+      APP_ID: "{{ appId }}"
+      INPUT_SERVER: "{{ inputServer }}"
     label: "Enter phone number"
 
 # Step 9: Wait for submit button to be enabled
@@ -80,9 +84,10 @@ tags:
 - runScript:
     file: "scripts/tap_remote.js"
     env:
-      SELECTOR: "[data-testid='phone-input.submit-btn']"
+      TAP_SELECTOR: "[data-testid='phone-input.submit-btn']"
       DEVICE: "{{ deviceId }}"
-      PORT: "{{ cdpPort }}"
+      APP_ID: "{{ appId }}"
+      INPUT_SERVER: "{{ inputServer }}"
     label: "Tap get verification code"
 
 # Step 11: Wait for OTP screen
@@ -98,10 +103,11 @@ tags:
 
 # Step 13: Input OTP code
 - runScript:
-    file: "scripts/cdp_input.js"
+    file: "scripts/input_text_remote.js"
     env:
-      SELECTOR: "[data-testid='otp-verify.otp-field'] input"
-      VALUE: "{{ otpCode }}"
+      TAP_SELECTOR: "[data-testid='otp-verify.otp-field'] input"
+      TEXT: "{{ otpCode }}"
       DEVICE: "{{ deviceId }}"
-      PORT: "{{ cdpPort }}"
+      APP_ID: "{{ appId }}"
+      INPUT_SERVER: "{{ inputServer }}"
     label: "Enter OTP code"

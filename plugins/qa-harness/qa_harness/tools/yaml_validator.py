@@ -179,20 +179,22 @@ def _check_selectors(doc: _FlowDoc, catalog: ScreenCatalog) -> list[ValidationIs
                                 details={"command": cmd, "selector": nid},
                             ))
 
-            # runScript env SELECTOR (CDP)
+            # runScript env TAP_SELECTOR / TAP_ID (CDP)
             if cmd == "runScript":
                 env = args.get("env")
-                if isinstance(env, dict) and "SELECTOR" in env:
-                    m = re.search(r"data-testid='([^']+)'", env["SELECTOR"])
-                    if m:
-                        tid = m.group(1)
-                        if not lookup_element_by_selector(catalog, tid):
-                            issues.append(ValidationIssue(
-                                severity="warning", code="UNKNOWN_CDP_SELECTOR",
-                                message=f'CDP selector for testID "{tid}" not found',
-                                file=doc.file_name, step=i,
-                                details={"command": cmd, "cdpSelector": env["SELECTOR"]},
-                            ))
+                if isinstance(env, dict):
+                    cdp_sel = env.get("TAP_SELECTOR", env.get("TAP_ID", ""))
+                    if cdp_sel:
+                        m = re.search(r"data-testid='([^']+)'", cdp_sel)
+                        if m:
+                            tid = m.group(1)
+                            if not lookup_element_by_selector(catalog, tid):
+                                issues.append(ValidationIssue(
+                                    severity="warning", code="UNKNOWN_CDP_SELECTOR",
+                                    message=f'CDP selector for testID "{tid}" not found',
+                                    file=doc.file_name, step=i,
+                                    details={"command": cmd, "cdpSelector": cdp_sel},
+                                ))
     return issues
 
 
@@ -211,8 +213,8 @@ def _check_korean_input(doc: _FlowDoc, catalog: ScreenCatalog) -> list[Validatio
             env = args.get("env", {})
             if not isinstance(env, dict):
                 continue
-            selector = env.get("SELECTOR", "")
-            is_webview_input = "cdp_input" in file
+            selector = env.get("TAP_SELECTOR", env.get("TAP_ID", ""))
+            is_webview_input = "input_text_remote" in file
             is_native_input = "adb_korean_input" in file
             m = re.search(r"data-testid='([^']+)'", selector)
             if m:
@@ -266,38 +268,39 @@ def _check_runscript_env(doc: _FlowDoc) -> list[ValidationIssue]:
             ))
             continue
 
-        if "tap_remote" in file or "cdp_input" in file:
+        if "tap_remote" in file or "input_text_remote" in file:
             if "DEVICE" not in env:
                 issues.append(ValidationIssue(
                     severity="error", code="MISSING_ENV_DEVICE",
                     message=f'CDP script "{file}" missing DEVICE env var',
                     file=doc.file_name, step=i,
                 ))
-            if "PORT" not in env:
+            if "INPUT_SERVER" not in env:
                 issues.append(ValidationIssue(
-                    severity="warning", code="MISSING_ENV_PORT",
-                    message=f'CDP script "{file}" missing PORT env var',
+                    severity="warning", code="MISSING_ENV_INPUT_SERVER",
+                    message=f'CDP script "{file}" missing INPUT_SERVER env var (defaults to http://localhost:5100)',
                     file=doc.file_name, step=i,
                 ))
 
-        if "tap_remote" in file and "SELECTOR" not in env:
-            issues.append(ValidationIssue(
-                severity="error", code="MISSING_ENV_SELECTOR",
-                message="tap_remote.js missing SELECTOR env var",
-                file=doc.file_name, step=i,
-            ))
-
-        if "cdp_input" in file:
-            if "SELECTOR" not in env:
+        if "tap_remote" in file:
+            if "TAP_ID" not in env and "TAP_SELECTOR" not in env and "TAP_TEXT" not in env:
                 issues.append(ValidationIssue(
-                    severity="error", code="MISSING_ENV_SELECTOR",
-                    message="cdp_input.js missing SELECTOR env var",
+                    severity="error", code="MISSING_ENV_TAP_TARGET",
+                    message="tap_remote.js missing TAP_ID, TAP_SELECTOR, or TAP_TEXT env var",
                     file=doc.file_name, step=i,
                 ))
-            if "VALUE" not in env and "TEXT" not in env:
+
+        if "input_text_remote" in file:
+            if "TAP_ID" not in env and "TAP_SELECTOR" not in env and "PLACEHOLDER" not in env:
                 issues.append(ValidationIssue(
-                    severity="error", code="MISSING_ENV_VALUE",
-                    message="cdp_input.js missing VALUE or TEXT env var",
+                    severity="warning", code="MISSING_ENV_INPUT_TARGET",
+                    message="input_text_remote.js missing TAP_ID, TAP_SELECTOR, or PLACEHOLDER env var",
+                    file=doc.file_name, step=i,
+                ))
+            if "TEXT" not in env:
+                issues.append(ValidationIssue(
+                    severity="error", code="MISSING_ENV_TEXT",
+                    message="input_text_remote.js missing TEXT env var",
                     file=doc.file_name, step=i,
                 ))
     return issues
