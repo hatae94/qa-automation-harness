@@ -1,0 +1,197 @@
+{
+  "manifest_version": "1.0.0",
+  "strategy": "cascading-selector",
+  "generated_at": "2026-03-23T07:15:29.438790+00:00",
+  "tc_count": 5,
+  "stats": {
+    "total_steps": 9,
+    "text_match_count": 1,
+    "testid_match_count": 0,
+    "manual_review_count": 2,
+    "lifecycle_skip_count": 6,
+    "text_match_rate": 33.3,
+    "automation_ready_rate": 33.3
+  },
+  "entries": [
+    {
+      "tc_id": "LoginPage_1",
+      "step_number": 1,
+      "step_description": "알파 앱 실행",
+      "element_type": "app",
+      "action": "lifecycle",
+      "extracted_text": "알파",
+      "selectors": {
+        "primary": {
+          "type": "lifecycle",
+          "value": "알파"
+        }
+      },
+      "platform": "rn",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": "App lifecycle action - no selector needed"
+    },
+    {
+      "tc_id": "LoginPage_2",
+      "step_number": 1,
+      "step_description": "알파 앱 실행",
+      "element_type": "app",
+      "action": "lifecycle",
+      "extracted_text": "알파",
+      "selectors": {
+        "primary": {
+          "type": "lifecycle",
+          "value": "알파"
+        }
+      },
+      "platform": "rn",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": "App lifecycle action - no selector needed"
+    },
+    {
+      "tc_id": "LoginPage_3",
+      "step_number": 1,
+      "step_description": "알파 앱 실행",
+      "element_type": "app",
+      "action": "lifecycle",
+      "extracted_text": "알파",
+      "selectors": {
+        "primary": {
+          "type": "lifecycle",
+          "value": "알파"
+        }
+      },
+      "platform": "rn",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": "App lifecycle action - no selector needed"
+    },
+    {
+      "tc_id": "LoginPage_3",
+      "step_number": 2,
+      "step_description": "인트로 > 앱 추적 권한 팝업",
+      "element_type": "navigation_chain",
+      "action": "tap",
+      "extracted_text": "앱 추적 권한 팝업",
+      "selectors": {
+        "primary": {
+          "type": "manual_review",
+          "value": null
+        }
+      },
+      "platform": "unknown",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": null
+    },
+    {
+      "tc_id": "LoginPage_4",
+      "step_number": 1,
+      "step_description": "알파 앱 실행",
+      "element_type": "app",
+      "action": "lifecycle",
+      "extracted_text": "알파",
+      "selectors": {
+        "primary": {
+          "type": "lifecycle",
+          "value": "알파"
+        }
+      },
+      "platform": "rn",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": "App lifecycle action - no selector needed"
+    },
+    {
+      "tc_id": "LoginPage_4",
+      "step_number": 2,
+      "step_description": "인트로 > 앱 추적 권한 팝업",
+      "element_type": "navigation_chain",
+      "action": "tap",
+      "extracted_text": "앱 추적 권한 팝업",
+      "selectors": {
+        "primary": {
+          "type": "manual_review",
+          "value": null
+        }
+      },
+      "platform": "unknown",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": null
+    },
+    {
+      "tc_id": "LoginPage_5",
+      "step_number": 1,
+      "step_description": "알파 앱 실행",
+      "element_type": "app",
+      "action": "lifecycle",
+      "extracted_text": "알파",
+      "selectors": {
+        "primary": {
+          "type": "lifecycle",
+          "value": "알파"
+        }
+      },
+      "platform": "rn",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": "App lifecycle action - no selector needed"
+    },
+    {
+      "tc_id": "LoginPage_5",
+      "step_number": 2,
+      "step_description": "인트로 > 앱 추적 권한 팝업 > 알림 받기(허용)",
+      "element_type": "navigation_chain",
+      "action": "tap",
+      "extracted_text": "알림 받기(허용)",
+      "selectors": {
+        "primary": {
+          "type": "text",
+          "value": "알림 받기(허용)"
+        }
+      },
+      "platform": "webview",
+      "text_match_possible": true,
+      "text_found_in_code": true,
+      "testid_available": false,
+      "source_file": "pages/alphaz/member-pending/index.page.tsx",
+      "notes": null
+    },
+    {
+      "tc_id": "LoginPage_5",
+      "step_number": 3,
+      "step_description": "앱 종료 후 임의 알림 전송",
+      "element_type": "app",
+      "action": "lifecycle",
+      "extracted_text": "앱",
+      "selectors": {
+        "primary": {
+          "type": "lifecycle",
+          "value": "앱"
+        }
+      },
+      "platform": "rn",
+      "text_match_possible": false,
+      "text_found_in_code": false,
+      "testid_available": false,
+      "source_file": null,
+      "notes": "App lifecycle action - no selector needed"
+    }
+  ]
+}

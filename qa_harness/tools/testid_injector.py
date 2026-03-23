@@ -90,6 +90,156 @@ _SKIP_PATHS = {
     "node_modules", "__tests__", ".test.", ".stories.", ".d.ts",
 }
 
+# ---------------------------------------------------------------------------
+# Semantic naming: handler / children text / placeholder extraction
+# ---------------------------------------------------------------------------
+
+# Korean text -> English segment dictionary for children text
+KR_EN_DICT: dict[str, str] = {
+    "멤버십 신청": "membership-signup",
+    "로그인": "login",
+    "인증번호 받기": "get-otp",
+    "다음": "next",
+    "확인": "confirm",
+    "취소": "cancel",
+    "허용": "allow",
+    "돌아가기": "go-back",
+    "문제가 있으신가요": "need-help",
+    "다시 인증번호 받기": "resend-otp",
+    "해당 번호로 계속하기": "continue-with-number",
+    "다른 번호 입력": "use-different-number",
+    "이미 신청했어요": "already-applied",
+    "패스할게요": "pass",
+    "추천받기": "get-referral",
+    "프로필 등록": "register-profile",
+    "저장": "save",
+    "삭제": "delete",
+    "신고": "report",
+    "차단": "block",
+    "연결하기": "connect",
+    "프로필 카드 보기": "view-profile-card",
+    "이용약관": "terms-of-service",
+    "개인정보 처리 방침": "privacy-policy",
+    "수정": "edit",
+    "완료": "done",
+    "닫기": "close",
+    "인증되었습니다": "verified",
+    "다시 인증번호 받기": "resend-otp",
+    "인증번호를 받지 못하셨나요": "otp-not-received",
+    "이미 멤버십 신청된 번호입니다": "already-registered",
+}
+
+# Placeholder key nouns (Korean placeholder text -> english segment)
+KR_PLACEHOLDER_DICT: dict[str, str] = {
+    "전화번호를 입력해주세요": "phone-number",
+    "전화번호": "phone-number",
+    "닉네임": "nickname",
+    "소개": "introduction",
+    "인증번호": "otp-code",
+    "검색": "search",
+    "010-0000-0000": "phone-number",
+    "메모를 입력해주세요": "memo",
+}
+
+# Regex to extract onClick handler name (e.g., onClick={handleClickSignUp} -> "SignUp")
+_HANDLER_RE = re.compile(r'onClick\s*=\s*\{([A-Za-z_][A-Za-z0-9_]*)\}')
+
+# Regex to extract children text right after closing > (handles JSX inline text)
+# Matches: >한국어텍스트</ or >\n  한국어텍스트\n</
+_CHILDREN_TEXT_RE = re.compile(r'>\s*\n?\s*([가-힣][가-힣\s?!.·]*[가-힣?!.])\s*\n?\s*</')
+
+# Regex to extract placeholder prop value
+_PLACEHOLDER_RE = re.compile(r'placeholder\s*=\s*["\']([^"\']+)["\']')
+
+
+def _extract_handler_segment(tag_text: str) -> str | None:
+    """Extract a semantic segment from onClick handler name.
+
+    handleClickSignUp -> "signup"
+    handleClick -> None (too generic)
+    onSubmit -> "submit"
+    """
+    m = _HANDLER_RE.search(tag_text)
+    if not m:
+        return None
+    handler = m.group(1)
+
+    # Strip common prefixes (order matters: longer prefixes first)
+    for prefix in ("handleClick", "handle_click_", "handle_", "handle", "onClick_", "on"):
+        if handler.startswith(prefix) and len(handler) > len(prefix):
+            remainder = handler[len(prefix):]
+            if remainder and remainder[0].isupper():
+                # CamelCase -> kebab-case
+                segment = re.sub(r'([A-Z])', r'-\1', remainder).lower().strip('-')
+                segment = re.sub(r'-+', '-', segment)
+                if len(segment) > 2:  # skip too-short like "go"
+                    return segment
+
+    return None
+
+
+def _extract_children_text_segment(tag_text: str, after_tag_lines: list[str]) -> str | None:
+    """Extract a semantic segment from Korean children text.
+
+    Searches in tag_text and the lines immediately following for Korean text
+    that matches our dictionary.
+    """
+    # Combine tag text with a few following lines for context
+    search_text = tag_text
+    if after_tag_lines:
+        search_text += '\n' + '\n'.join(after_tag_lines[:5])
+
+    # Try dictionary match (longest match first)
+    for kr_text, en_segment in sorted(KR_EN_DICT.items(), key=lambda x: -len(x[0])):
+        if kr_text in search_text:
+            return en_segment
+
+    return None
+
+
+def _extract_placeholder_segment(tag_text: str) -> str | None:
+    """Extract a semantic segment from placeholder text."""
+    m = _PLACEHOLDER_RE.search(tag_text)
+    if not m:
+        return None
+    placeholder = m.group(1)
+
+    for kr_text, en_segment in sorted(KR_PLACEHOLDER_DICT.items(), key=lambda x: -len(x[0])):
+        if kr_text in placeholder:
+            return en_segment
+
+    return None
+
+
+def _has_text_children(tag_text: str, after_tag_lines: list[str]) -> bool:
+    """Check if a component has Korean text children (for selective injection)."""
+    search_text = tag_text
+    if after_tag_lines:
+        search_text += '\n' + '\n'.join(after_tag_lines[:5])
+
+    # Check for any Korean text between > and </
+    return bool(_CHILDREN_TEXT_RE.search(search_text))
+
+
+def _is_icon_only_component(tag_text: str, after_tag_lines: list[str]) -> bool:
+    """Check if the component only contains icon/image children (no text)."""
+    search_text = tag_text
+    if after_tag_lines:
+        search_text += '\n' + '\n'.join(after_tag_lines[:5])
+
+    # Check for icon/image patterns
+    icon_patterns = [
+        re.compile(r'<\s*(Icon|Image|SvgIcon|.*Icon)\s'),
+        re.compile(r'source\s*=\s*\{'),
+        re.compile(r'left\s*=\s*["\'](?:back|close)["\']'),
+    ]
+    has_icon = any(p.search(search_text) for p in icon_patterns)
+
+    # Check for Korean text
+    has_korean = bool(re.search(r'[가-힣]{2,}', search_text.split('</')[0] if '</' in search_text else search_text))
+
+    return has_icon and not has_korean
+
 
 # ---------------------------------------------------------------------------
 # Data classes
@@ -257,12 +407,21 @@ def _to_kebab(name: str) -> str:
 
 
 def _generate_testid(screen_name: str, component_name: str, suffix: str,
-                     counter: dict[str, int]) -> str:
+                     counter: dict[str, int],
+                     semantic_segment: str | None = None) -> str:
     """Generate a testID following the naming convention.
 
-    Format: {screen}.{element}-{type}
+    Format: {screen}.{semantic_or_element}-{type}
+
+    Priority for naming the element segment:
+      1. semantic_segment (from handler name, children text, or placeholder)
+      2. kebab-case of component_name (generic fallback)
     """
-    element = _to_kebab(component_name)
+    if semantic_segment:
+        element = semantic_segment
+    else:
+        element = _to_kebab(component_name)
+
     base = f"{screen_name}.{element}{suffix}"
 
     # Ensure uniqueness within a file by appending counter if needed
@@ -473,7 +632,7 @@ def print_audit_report(report: AuditReport) -> None:
 # ---------------------------------------------------------------------------
 
 def inject(source: Path, source_type: str, rules_path: Path | None = None,
-           dry_run: bool = True) -> list[InjectionPlan]:
+           dry_run: bool = True, selective: bool = False) -> list[InjectionPlan]:
     """Plan or apply testID injections.
 
     Args:
@@ -481,6 +640,8 @@ def inject(source: Path, source_type: str, rules_path: Path | None = None,
         source_type: "rn" or "web"
         rules_path: Optional path to testid-rules.yaml
         dry_run: If True, only plan; if False, modify files.
+        selective: If True, only inject on elements where text matching fails
+                   (icon-only, no text children, shared components).
 
     Returns:
         List of InjectionPlan entries.
@@ -511,6 +672,7 @@ def inject(source: Path, source_type: str, rules_path: Path | None = None,
 
         file_plans = _plan_injections_for_file(
             fpath, targets, testid_re, source_type, prop_name,
+            selective=selective,
         )
         plans.extend(file_plans)
 
@@ -526,8 +688,14 @@ def _plan_injections_for_file(
     testid_re: re.Pattern[str],
     source_type: str,
     prop_name: str,
+    selective: bool = False,
 ) -> list[InjectionPlan]:
-    """Plan testID injections for a single file."""
+    """Plan testID injections for a single file.
+
+    When selective=True (Phase 2 mode), only inject testIDs on elements
+    where text matching would fail: icon-only buttons, no text children,
+    no placeholder, or shared components.
+    """
     try:
         content = file_path.read_text(encoding="utf-8")
     except (UnicodeDecodeError, PermissionError):
@@ -537,6 +705,7 @@ def _plan_injections_for_file(
     screen_name = _derive_screen_name(file_path, source_type)
     plans: list[InjectionPlan] = []
     counter: dict[str, int] = {}
+    is_common = "/common/" in str(file_path) or "/components/" in str(file_path)
 
     for i, line in enumerate(lines):
         for m in _JSX_OPEN_RE.finditer(line):
@@ -574,12 +743,34 @@ def _plan_injections_for_file(
             if testid_re.search(tag_text):
                 continue  # Already has testID, skip
 
+            # Gather lines after the tag for children text analysis
+            after_tag_lines = lines[i + 1 : min(i + 8, len(lines))]
+
+            # Selective mode: skip elements where text matching works
+            if selective:
+                has_text = _has_text_children(tag_text, after_tag_lines)
+                has_placeholder = bool(_PLACEHOLDER_RE.search(tag_text))
+                is_icon_only = _is_icon_only_component(tag_text, after_tag_lines)
+
+                # Skip if text matching is sufficient (has Korean text or placeholder)
+                if (has_text or has_placeholder) and not is_common and not is_icon_only:
+                    continue
+
+            # Extract semantic segment (priority: handler > children > placeholder)
+            semantic = (
+                _extract_handler_segment(tag_text)
+                or _extract_children_text_segment(tag_text, after_tag_lines)
+                or _extract_placeholder_segment(tag_text)
+            )
+
             suffix = targets[comp_name]
-            testid = _generate_testid(screen_name, comp_name, suffix, counter)
+            testid = _generate_testid(
+                screen_name, comp_name, suffix, counter,
+                semantic_segment=semantic,
+            )
 
             # Build the modified line: insert prop after <ComponentName
             tag_end = m.end()
-            col = tag_end - (len(line) - len(line[m.start():]))
             insert_attr = f' {prop_name}="{testid}"'
 
             original = line
@@ -808,6 +999,8 @@ def _cli_main() -> None:
     p_inject.add_argument("--rules", type=Path, default=None)
     p_inject.add_argument("--dry-run", action="store_true", default=True)
     p_inject.add_argument("--apply", action="store_true", default=False)
+    p_inject.add_argument("--selective", action="store_true", default=False,
+                          help="Only inject testIDs where text matching fails")
 
     # export
     p_export = sub.add_parser("export", help="Export testIDs as JSON")
@@ -854,7 +1047,8 @@ def _cli_main() -> None:
 
     elif args.command == "inject":
         is_dry_run = not args.apply
-        plans = inject(args.source, args.source_type, args.rules, dry_run=is_dry_run)
+        plans = inject(args.source, args.source_type, args.rules,
+                       dry_run=is_dry_run, selective=args.selective)
         if is_dry_run:
             print_injection_plan(plans, args.source_type)
         else:

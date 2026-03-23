@@ -521,18 +521,21 @@ def testid_audit(source: Path, source_type: str, output_format: str) -> None:
               help="Path to testid-rules.yaml")
 @click.option("--dry-run", is_flag=True, default=True, help="Only show plan, do not modify files")
 @click.option("--apply", is_flag=True, default=False, help="Actually modify source files")
+@click.option("--selective", is_flag=True, default=False,
+              help="Only inject testIDs where text matching fails (icon-only, no text children)")
 def testid_inject(source: Path, source_type: str, rules_path: Path | None,
-                  dry_run: bool, apply: bool) -> None:
+                  dry_run: bool, apply: bool, selective: bool) -> None:
     """Inject testIDs into interactive components."""
     from qa_harness.tools.testid_injector import inject as do_inject
     from qa_harness.tools.testid_injector import print_injection_plan
 
     is_dry_run = not apply
-    plans = do_inject(source, source_type, rules_path, dry_run=is_dry_run)
+    plans = do_inject(source, source_type, rules_path, dry_run=is_dry_run, selective=selective)
     if is_dry_run:
         print_injection_plan(plans, source_type)
         if plans:
-            click.echo(f"  Run with --apply to modify {len(plans)} files.\n")
+            mode_label = " (selective mode)" if selective else ""
+            click.echo(f"  Run with --apply to modify {len(plans)} files{mode_label}.\n")
     else:
         click.echo(f"\n  Applied {len(plans)} testID injections.\n")
         print_injection_plan(plans, source_type)
@@ -573,6 +576,66 @@ def testid_diff(source: Path, source_type: str) -> None:
 
     plans = do_diff(source, source_type)
     print_injection_plan(plans, source_type)
+
+
+# ---------------------------------------------------------------------------
+# manifest: selector manifest generation, validation, stats
+# ---------------------------------------------------------------------------
+
+@main.group("manifest")
+def manifest() -> None:
+    """Generate and manage selector manifests for the Cascading Selector Strategy."""
+
+
+@manifest.command("generate")
+@click.option("--tc", "tc_path", required=True, type=click.Path(exists=True, path_type=Path),
+              help="Path to parsed TC JSON")
+@click.option("--webview-source", default=None, type=click.Path(path_type=Path),
+              help="Path to WebView source directory")
+@click.option("--rn-source", default=None, type=click.Path(path_type=Path),
+              help="Path to React Native source directory")
+@click.option("--output", "output_path", required=True, type=click.Path(path_type=Path),
+              help="Output path for selector-manifest.json")
+def manifest_generate(
+    tc_path: Path,
+    webview_source: Path | None,
+    rn_source: Path | None,
+    output_path: Path,
+) -> None:
+    """Generate a selector manifest from parsed TCs and source code."""
+    from qa_harness.tools.manifest_generator import generate_manifest, print_manifest_stats
+
+    result = generate_manifest(
+        tc_path=tc_path,
+        webview_source=webview_source,
+        rn_source=rn_source,
+        output_path=output_path,
+    )
+    click.echo(f"\n  Generated manifest: {len(result.entries)} entries -> {output_path}")
+    click.echo(f"  Stats: {result.stats}\n")
+
+
+@manifest.command("validate")
+@click.option("--manifest", "manifest_path", required=True,
+              type=click.Path(exists=True, path_type=Path))
+def manifest_validate(manifest_path: Path) -> None:
+    """Validate a selector manifest for completeness."""
+    from qa_harness.tools.manifest_generator import validate_manifest
+
+    result = validate_manifest(manifest_path)
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+    if not result["valid"]:
+        raise SystemExit(1)
+
+
+@manifest.command("stats")
+@click.option("--manifest", "manifest_path", required=True,
+              type=click.Path(exists=True, path_type=Path))
+def manifest_stats(manifest_path: Path) -> None:
+    """Show summary statistics from a selector manifest."""
+    from qa_harness.tools.manifest_generator import print_manifest_stats
+
+    print_manifest_stats(manifest_path)
 
 
 if __name__ == "__main__":
